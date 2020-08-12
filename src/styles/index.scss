@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@font-face {
+  font-family: 'Roboto', sans-serif;
+
+}
+
+@import "variables";
+@import "home";
+@import "reset";
+
+html {
+  font-size: $root-font-size;
+  font-family: $font-family;
+  max-width: $page-width;
+  margin: 0 auto;
+  text-align: center;
+}
+
+p {
+  font-size: $paragraph-font-size;
+}
