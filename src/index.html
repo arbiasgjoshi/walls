@@ -5,134 +5,88 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
     <title><%= htmlWebpackPlugin.options.title %></title>
-
 </head>
 
 <body>
 
-<div class="wrapper" id="js-wrapper">
-    <div class="sections" id="js-slideContainer">
-        <section class="section" id="first" data-background="#fff">
-            <span class="first-mask"></span>
-            <span class="second-mask"></span>
-        </section>
-        <section class="section" id="second" data-background="#fff">
+<div class="panels">
+    <div  id="section-one" class="panel"></div>
+    <div  id="section-two" class="panel"></div>
+    <div  id="section-three" class="panel"></div>
+    <div  id="section-four" class="panel"></div>
+    <div  id="section-five" class="panel"></div>
+    <div  id="section-six" class="panel"></div>
+    <div id="layers">
 
-        </section>
-        <section class="section" id="third" data-background="#cf2211">
-
-        </section>
-        <section class="section" id="fourth" data-background="#ff92ad">
-
-        </section>
-        <section class="section" id="fifth" data-background="#058fbd">
-
-        </section>
-        <section class="section" id="sixth" data-background="#419618">
-
-        </section>
-    </div>
-    <ul class="section-anchors">
-        <li>
-            <a href="#first" data-scroll="#first"></a>
-        </li>
-        <li>
-            <a href="#second" data-scroll="#second"></a>
-        </li>
-        <li>
-            <a href="#third" data-scroll="#third"></a>
-        </li>
-        <li>
-            <a href="#fourth" data-scroll="#fourth"></a>
-        </li>
-        <li>
-            <a href="#fifth" data-scroll="#fifth"></a>
-        </li>
-        <li>
-            <a href="#sixth" data-scroll="#sixth"></a>
-        </li>
-    </ul>
-
-    <div id="footer">
-        <span id="footer-logo"></span>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto commodi, corporis cupiditate dolor
-            doloribus, ea eligendi ex exercitationem expedita.
-        </p>
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
-        integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
-        crossorigin="anonymous"></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"-->
-<!--        integrity="sha512-HzAEuXwhLxwm/Jj+5ecdjzrRVrjuh2ZeIxyT1Ln37TO5pWNMnKBuU7cfd1wvRQ/k86w1oC174Yk1T7aRlBpIcA=="-->
-<!--        crossorigin="anonymous"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"-->
-<!--        integrity="sha512-A98SmLRZISk4eIxQBeCm8k0jAcwN3A3lBx4hr7baoMpV1VpxcxlZIhi5fJIZN50sQ5RlCzx8yV+Voy2cR6x0aA=="-->
-<!--        crossorigin="anonymous"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"-->
-<!--        integrity="sha512-Ey+nIg+Ue8gUAaCNjR1KHR8nwDjWn9QXoQbynR/X+V66s6u1oqynnuRQ8zSgg5f5gBNb2Bzsu1pItCi3sPkbfA=="-->
-<!--        crossorigin="anonymous"></script>-->
-<script type="text/javascript">
-    // $(function () {
-    //
-    //     var controller = new ScrollMagic.Controller();
-    //
-    //     var horizontalSlide = new TimelineMax()
-    //     // animate panels
-    //         .to("#js-slideContainer", 1, {x: "-16.66667%"})
-    //         .to("#js-slideContainer", 1, {x: "-33.3334%"})
-    //         .to("#js-slideContainer", 1, {x: "-50.0001%"})
-    //         .to("#js-slideContainer", 1, {x: "-66.6668%"})
-    //         .to("#js-slideContainer", 1, {x: "-83.3335%"})
-    //     // .to("#js-slideContainer", 1, {x: "-83.33335%"})
-    //     // .to("#js-slideContainer", 1, {x: "-100%"});
-    //     new ScrollMagic.Scene({
-    //         triggerElement: "#js-wrapper",
-    //         triggerHook: "onLeave",
-    //         duration: "500%"
-    //     })
-    //         .setPin("#js-wrapper")
-    //         .setTween(horizontalSlide)
-    //         .addTo(controller);
-    //
-    //     setTimeout(function () {
-    //         $('span.second-mask').fadeIn(500);
-    //     }, 2000)
-    //
-    // });
-    //
-    // let first = 0;
-    // let second = $(window).height() * 2;
-    // let third = $(window).height() * 3;
-    // let fourth = $(window).height() * 4;
-    // let fifth = $(window).height() * 5;
-    //
-    // $(window).scroll(function () {
-    //     let windowTop = $(window).scrollTop() - 50;
-    //
-    //     if (windowTop <= second ) {
-    //         $('body').removeClass();
-    //         $('body').addClass('white');
-    //     } else if (windowTop > second && windowTop <= third){
-    //         $('body').removeClass();
-    //         $('body').addClass('crimson');
-    //     } else if (windowTop > third && windowTop <= fourth) {
-    //         $('body').removeClass();
-    //         $('body').addClass('rose');
-    //     } else if (windowTop > fourth && windowTop < fifth) {
-    //         $('body').removeClass();
-    //         $('body').addClass('ocean');
-    //     } else if (windowTop > fifth) {
-    //         console.log('more than fifth');
-    //         $('body').removeClass();
-    //         $('body').addClass('emerald');
-    //     }
-    // })
-</script>
+
+
+
+<!--<div class="wrapper" id="js-wrapper">-->
+<!--&lt;!&ndash;    <section class="section" id="first">&ndash;&gt;-->
+<!--&lt;!&ndash;        <span class="first-mask"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;        <span class="second-mask"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;    </section>&ndash;&gt;-->
+<!--&lt;!&ndash;    <section class="section" id="second">&ndash;&gt;-->
+<!--&lt;!&ndash;        <span class="layer-box"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;    </section>&ndash;&gt;-->
+<!--    -->
+<!--    &lt;!&ndash;    <section class="section" id="third">&ndash;&gt;-->
+<!--    &lt;!&ndash;        <div class="masks">&ndash;&gt;-->
+<!--    &lt;!&ndash;        <span class="bg-mask"></span> &lt;!&ndash; TODO delete this upon adding bg-effect&ndash;&gt;&ndash;&gt;-->
+<!--    &lt;!&ndash;        &ndash;&gt;-->
+<!--    &lt;!&ndash;        </div>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <div class="content">&ndash;&gt;-->
+<!--    &lt;!&ndash;            <h2>&ndash;&gt;-->
+<!--    &lt;!&ndash;                We want to increase happinessthrough community support.&ndash;&gt;-->
+<!--    &lt;!&ndash;            </h2>&ndash;&gt;-->
+<!--    &lt;!&ndash;            <h2>&ndash;&gt;-->
+<!--    &lt;!&ndash;                Will you join our new journey to give more meaningto our heart and make the world a happier,more&ndash;&gt;-->
+<!--    &lt;!&ndash;                inclusive place on street at a time?&ndash;&gt;-->
+<!--    &lt;!&ndash;            </h2>&ndash;&gt;-->
+<!--    &lt;!&ndash;        </div>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <div class="circle-photo"></div>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </section>&ndash;&gt;-->
+<!--    &lt;!&ndash;    <section class="section" id="fourth">&ndash;&gt;-->
+
+<!--    &lt;!&ndash;    </section>&ndash;&gt;-->
+<!--    &lt;!&ndash;    <section class="section" id="fifth">&ndash;&gt;-->
+
+<!--    &lt;!&ndash;    </section>&ndash;&gt;-->
+<!--    &lt;!&ndash;    <section class="section" id="sixth">&ndash;&gt;-->
+
+<!--    &lt;!&ndash;    </section>&ndash;&gt;-->
+<!--&lt;!&ndash;    <ul class="section-anchors">&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <a href="#first" data-scroll="#first"></a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <a href="#second" data-scroll="#second"></a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <a href="#third" data-scroll="#third"></a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <a href="#fourth" data-scroll="#fourth"></a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <a href="#fifth" data-scroll="#fifth"></a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <a href="#sixth" data-scroll="#sixth"></a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;    </ul>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <div id="footer">&ndash;&gt;-->
+<!--&lt;!&ndash;        <span id="footer-logo"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;        <p>&ndash;&gt;-->
+<!--&lt;!&ndash;            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto commodi, corporis cupiditate dolor&ndash;&gt;-->
+<!--&lt;!&ndash;            doloribus, ea eligendi ex exercitationem expedita.&ndash;&gt;-->
+<!--&lt;!&ndash;        </p>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--</div>-->
 </body>
 
 </html>

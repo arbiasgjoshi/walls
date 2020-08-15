@@ -10,25 +10,25 @@ body {
   -o-transition: ease all 0.15s;
   transition: ease all 0.15s;
 
-  &.white {
-    background-color: #fff;
-  }
-
-  &.crimson {
-    background-color: #cf2211;
-  }
-
-  &.rose{
-    background-color: #ff92ad;
-  }
-
-  &.ocean {
-    background-color: #058fbd;
-  }
-
-  &.emerald {
-    background-color: #419618;
-  }
+  //&.white {
+  //  background-color: #fff;
+  //}
+  //
+  //&.crimson {
+  //  background-color: #cf2211;
+  //}
+  //
+  //&.rose{
+  //  background-color: #ff92ad;
+  //}
+  //
+  //&.ocean {
+  //  background-color: #058fbd;
+  //}
+  //
+  //&.emerald {
+  //  background-color: #419618;
+  //}
 }
 
 body,
@@ -38,44 +38,51 @@ html {
   margin: 0;
 }
 
+svg{
+  width: inherit;
+}
 
 // ---------- SCROLLING STYLES ---------- //
 
-$panelcount: 6; // set # of panels/sections here
-
 .wrapper {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  perspective: 1000;
+  //width: 600%;
+  //height: 100%;
+  //display: flex;
+  //flex-wrap: nowrap;
+}
+//
+//.section {
+//  width: 100%;
+//  height: 100%;
+//  display: -webkit-box;
+//  display: flex;
+//  -webkit-box-pack: center;
+//  justify-content: center;
+//  -webkit-box-align: center;
+//  align-items: center;
+//  font-weight: 600;
+//  font-size: 1.5em;
+//  text-align: center;
+//  color: white;
+//  position: relative;
+//  box-sizing: border-box;
+//  padding: 10px;
+//}
+
+span.layer-box {
+  //position: absolute;
+  //left: 50px;
+  //top: 50%;
+  //width: 100px;
+  //height: 50px;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  border: 3px solid #ccc;
+  background-color: #000;
 }
 
-.section {
-  & {
-    height: 100%;
-    width: calc(100% / #{$panelcount});
-    float: left;
-    position: relative;
-  }
-
-  &s {
-    width: percentage($panelcount);
-    height: 100%;
-  }
-
-  &__title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    font-size: 30px;
-    color: #fff;
-  }
-
-}
-
-#first{
+#first {
   overflow: hidden;
   position: relative;
 }
@@ -95,6 +102,7 @@ span.first-mask {
   animation-duration: 3s;
   animation-iteration-count: 1;
 }
+
 @keyframes shrinkIn {
   from {
     left: -100%;
