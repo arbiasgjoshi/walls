@@ -1,0 +1,9 @@
+{
+  "name": "walls",
+  "version": "1.0.0",
+  "description": "Walls Playbook",
+  "main": "index.js",
+  "repository": "https://github.com/arbiasgjoshi/walls.git",
+  "author": "Arbias Gjoshi <arbiasgjoshi@gmail.com>",
+  "license": "MIT"
+}
