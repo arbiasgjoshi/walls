@@ -2,11 +2,11 @@ import './styles/index.scss';
 
 
 import './styles/index.scss'
-import { gsap } from "gsap";
+import { gsap, TimelineMax } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TimelineMax);
 
 function scrollTrigger () {
     let sections = gsap.utils.toArray(".panel");
@@ -43,6 +43,29 @@ function scrollTrigger () {
             });
         });
     });
+
+    const gradientTween = new TimelineMax();
+    const container = document.getElementsByClassName("svg-container");
+
+    const colors = [
+        { color: "#e42513" },
+        { color: "#ff527f" },
+        { color: "#00a0d6" },
+        { color: "#46a916" },
+    ];
+
+    for (let i = 0; i < colors.length; i++) {
+        gradientTween.to(container, 1, {
+            backgroundImage:
+                "-webkit-linear-gradient(-4deg, " +
+                colors[i].left +
+                " 0%, " +
+                colors[i].middle +
+                " 50%, " +
+                colors[i].right +
+                " 90%)"
+        });
+    }
 }
 
 scrollTrigger();

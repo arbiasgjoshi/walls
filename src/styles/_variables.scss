@@ -2,3 +2,13 @@ $root-font-size: 1rem;
 $font-family: 'Roboto', sans-serif;
 $page-width: 100%;
 $paragraph-font-size: 1.6rem;
+
+@import url('http://db.onlinewebfonts.com/c/5c8036fec9d614a90b202dbe1c3b8395?family=Stick-A-RoundW00-Stick-A-Round');
+
+@font-face {
+  font-family: 'stickarounduploaded_file';
+  src: url('../fonts/stick-a-round-webfont.woff2') format('woff2'),
+  url('../fonts/stick-a-round-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
