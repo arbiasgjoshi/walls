@@ -4,13 +4,12 @@ import './styles/index.scss';
 import './styles/index.scss'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 function scrollTrigger () {
-
-
-    let sections = gsap.utils.toArray(".section");
+    let sections = gsap.utils.toArray(".panel");
 
     gsap.to(sections, {
         xPercent: -100 * (sections.length - 1),
@@ -19,54 +18,31 @@ function scrollTrigger () {
             trigger: ".container",
             pin: true,
             scrub: 1,
-            snap: 1 / (sections.length - 1),
+            snap: 0,
             // base vertical scrolling on how wide the container is so it feels more natural.
             end: () => "+=" + document.querySelector(".container").offsetWidth
         }
     });
 
-    // let sections = gsap.utils.toArray(".section");
-    //
-    // gsap.to(sections, {
-    //     yPercent: -100 * (sections.length - 1),
-    //     ease: "none",
-    //     horizontal: true,
-    //     scrollTrigger: {
-    //         trigger: "#js-wrapper",
-    //         pin: true,
-    //         scrub: 1,
-    //         // snap: 1,
-    //         // end: () => "+=" + document.querySelector("#js-wrapper").offsetWidth
-    //     }
-    // });
-    //
-    // gsap.to('.layer-box', {
-    //     // xPercent: -100 * (sections.length - 1),
-    //     horizontal: true,
-    //     scrollTrigger: {
-    //         trigger: '.layer-box',
-    //         // start: 'left center',
-    //         toggleActions: 'restart reverse'
-    //     },
-    //     x: 50,
-    //     y: 300,
-    //     duration: 3
-    // });
-}
-//
-import SweetScroll from 'sweet-scroll';
+    document.querySelectorAll(".section-anchors button").forEach((btn) => {
 
-document.addEventListener(
-    'DOMContentLoaded',
-    () => {
-        new SweetScroll({
-            /* some options */
-            trigger: 'a[href^="#"]',
-            vertical: false,
-            horizontal: true
+        btn.addEventListener("click", () => {
+            // TODO fix the active class for buttons
+            // const element = document.getElementById(btn.id);
+            // if(element.classList.contains('active')) {
+            //     element.classList.remove("active");
+            // } else {
+            //     element.classList.add("active");
+            // }
+
+            gsap.to('.container', 1.5, {
+                scrollTo: {
+                    y: "#section-" + btn.id,
+                    x: 0
+                }
+            });
         });
-    },
-    document.getElementById('js-wrapper'),
-);
+    });
+}
 
 scrollTrigger();

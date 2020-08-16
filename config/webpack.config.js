@@ -49,6 +49,7 @@ module.exports = {
             template: path.resolve(ROOT_DIRECTORY, 'src/index.html'),
             filename: 'index.html',
         }),
+        new HtmlWebpackInlineSVGPlugin(),
     ],
 
     devServer: {
@@ -96,6 +97,25 @@ module.exports = {
                         configFile: path.resolve(ROOT_DIRECTORY, 'config/babel.config.js'),
                     },
                 },
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg|ico)$/i,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'images/'
+                    }
+                }]
+            },
+            {
+                test: /\.(html)$/,
+                use: {
+                    loader: 'html-loader',
+                    options: {
+                        attributes: true
+                    }
+                }
             },
             {
                 test: /\.svg$/,
