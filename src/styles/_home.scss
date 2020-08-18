@@ -88,6 +88,21 @@ svg{
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          //opacity: 0;
+          //-webkit-transition: ease all 0.15ms;
+          //-moz-transition: ease all 0.15ms;
+          //-ms-transition: ease all 0.15ms;
+          //-o-transition: ease all 0.15ms;
+          //transition: ease all 0.15ms;
+          //-webkit-transform: translateY(-50%);
+          //-moz-transform: translateY(-50%);
+          //-ms-transform: translateY(-50%);
+          //-o-transform: translateY(-50%);
+          //transform: translateY(-50%);
+          //
+          //&.transition{
+          //  opacity: 1;
+          //}
 
           span.number{
             font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
@@ -116,6 +131,21 @@ svg{
             margin-bottom: -60px;
             border-radius: 100%;
             box-shadow: -7px 14px 15px 0px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
+          }
+
+          &:after{
+            content: '';
+            position: absolute;
+            height: 250px;
+            width: 64px;
+            bottom: 214px;
+            background-color: rgba(255,255,255,0.3);
+            background-image: url('../images/vertical-lines.png');
+            background-repeat: repeat-y;
+            background-position: bottom center;
+            z-index: 1;
           }
         }
       }
@@ -133,10 +163,64 @@ svg{
       right: -212px;
       margin-top: -212px;
       z-index: 20;
+
+
+      opacity: 0;
+      -webkit-transition: ease all 0.15ms;
+      -moz-transition: ease all 0.15ms;
+      -ms-transition: ease all 0.15ms;
+      -o-transition: ease all 0.15ms;
+      transition: ease all 0.15ms;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    .road{
+      position: absolute;
+      bottom: 150px;
+      width: 100%;
+      left: 0;
+      z-index: 20;
+
+      .heart{
+        width: 128px;
+        height: 128px;
+        display: block;
+        background: url('../images/heart-red.png') no-repeat center;
+        position: absolute;
+        left: -64px;
+        margin-top: -35px;
+      }
+
+      .lines{
+        height: 64px;
+        width: 100%;
+        background-image: url('../images/road-lines.png');
+        background-position: left center;
+        background-repeat: repeat-x;
+        background-size: auto 16px;
+        background-color: rgba(255,255,255, 0.3);
+      }
+
+      &.half{
+        width: 50%;
+
+        &.left{
+          left: 50%;
+        }
+        &.end {
+          left: 0;
+          width: 71%;
+        }
+      }
     }
   
     &#section-one{
       overflow: hidden;
+      background-color: #fff;
     }
 
     &#section-four{
@@ -189,6 +273,20 @@ svg{
   }
 }
 
+.bike-rolling{
+  width: 219px;
+  height: 236px;
+  display: inline-block;
+  position: absolute;
+  background-image: url('../images/bike-rolling.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  bottom: 157px;
+  left: 70%;
+  z-index: 20;
+}
+
 div.svg-container{
   position: absolute;
   z-index: 1;
@@ -239,14 +337,11 @@ div.svg-container{
     z-index: 4;
     opacity: 1;
   }
-}
 
-span.layer-box {
-  width: 100px;
-  height: 50px;
-  display: inline-block;
-  border: 3px solid #ccc;
-  background-color: #000;
+
+  #secondary-bg{
+    transform: translate3d(100px, 0px, 0px);
+  }
 }
 
 #section-one {
@@ -293,7 +388,58 @@ span.layer-box {
     background-repeat: no-repeat;
     background-size: auto 100%;
     z-index: 6;
-    display: none;
+    opacity: 0;
+  }
+
+  .behind-mask{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transition: ease all 0.25s;
+
+    img{
+      max-height: 75vh;
+      width: auto;
+    }
+  }
+
+  &.loaded{
+    .behind-mask{
+      background-color: #e42513;
+    }
+  }
+}
+
+#section-two{
+  iframe {
+    width: 100vw;
+    height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+    min-height: 100vh;
+    min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:before{
+    content: '';
+    width: 212px;
+    height: 212px;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    margin-left: -106px;
+    margin-top: -106px;
+    background: url('../images/pause-video.png') no-repeat center;
+    -webkit-background-size: contain  ;
+    background-size: contain;
   }
 }
 

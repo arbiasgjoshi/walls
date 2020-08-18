@@ -153,7 +153,7 @@ module.exports = {
                         options: {
                             name: '[name].[contenthash:8].[ext]',
                             limit: 4096,
-                            outputPath: 'assets',
+                            outputPath: './assets/images',
                         },
                     },
                 ],
@@ -165,7 +165,7 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[contenthash:8].[ext]',
-                            outputPath: 'assets',
+                            outputPath: 'assets/fonts',
                         },
                     },
                 ],
@@ -196,13 +196,6 @@ module.exports = {
             algorithm: 'gzip',
             compressionOptions: { level: 9 },
             filename: '[path].gz[query]',
-            minRatio: 0.8,
-            test: /\.(js|css|html|svg)$/,
-        }),
-        new CompressionPlugin({
-            algorithm: 'brotliCompress',
-            compressionOptions: { level: 11 },
-            filename: '[path].br[query]',
             minRatio: 0.8,
             test: /\.(js|css|html|svg)$/,
         }),

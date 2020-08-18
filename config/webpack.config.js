@@ -1,6 +1,3 @@
-// config/webpack.config.js
-
-const path = require('path');
 
 /**
  * process.cwd will return a path to our active project directory
@@ -9,8 +6,10 @@ const path = require('path');
  * On Mac:
  * /Users/username/project/webpack-boilerplate
  */
+const path = require('path');
 const ROOT_DIRECTORY = process.cwd();
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
     /**
@@ -50,6 +49,9 @@ module.exports = {
             filename: 'index.html',
         }),
         new HtmlWebpackInlineSVGPlugin(),
+        new CompressionPlugin({
+            algorithm: 'gzip',
+        })
     ],
 
     devServer: {
@@ -104,7 +106,7 @@ module.exports = {
                     loader: 'file-loader',
                     options: {
                         name: '[name].[ext]',
-                        outputPath: 'images/'
+                        outputPath: './assets/images/'
                     }
                 }]
             },
@@ -146,7 +148,6 @@ module.exports = {
                             url: true,
                             import: true,
                             modules: {
-                                // Convention name of generated CSS Modules classname
                                 localIdentName: '[name]__[local]--[contenthash:8]',
                             },
                         },

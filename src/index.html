@@ -18,12 +18,15 @@
     </div>
     <div class="panels">
         <div id="section-one" class="panel">
-            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/411afa56936355.59c23eb952535.gif"
-                 class="behind-image">
+            <div id="gif-wrapper" class="behind-mask"></div>
             <span class="first-mask"></span>
             <span class="second-mask"></span>
         </div>
-        <div id="section-two" class="panel"></div>
+        <div id="section-two" class="panel">
+            <iframe src="https://player.vimeo.com/video/448670115?loop=1&controls=1&autplay=1" id="video-player"
+                    width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+            </iframe>
+        </div>
         <div id="section-three" class="panel">
             <div class="content">
                 <h2>
@@ -39,22 +42,29 @@
                 <img alt="Sample Pic" src=<%=require('./images/first-section-pic.png').default%> />
             </div>
             <div class="svg-container">
-                <div id="sun">
-                    <!-- TODO: Sun image to be sent from client!-->
-                </div>
-                <div class="dbg">
-<!--                    <img src=<%=require('./images/svg-optimized/far-bg.svg').default%>>-->
-                </div>
+                <!--                <div id="sun">-->
+                <!--                    &lt;!&ndash; TODO: Sun image to be sent from client!&ndash;&gt;-->
+                <!--                </div>-->
+                <!--                <div class="dbg">-->
+                <!--                    &lt;!&ndash;                    <img src=<%=require('./images/svg-optimized/far-bg.svg').default%>>&ndash;&gt;-->
+                <!--                </div>-->
                 <div class="bg">
-                    <img src=<%=require('./images/svg-optimized/bg.svg').default%>>
+                    <img id="second-bg" src=<%=require('./images/svg-optimized/bg.svg').default%>>
                 </div>
                 <div class="mbg">
-                    <img src=<%=require('./images/svg-optimized/midground.svg').default%>>
+                    <img id="third-bg" src=<%=require('./images/svg-optimized/midground.svg').default%>>
                 </div>
-                <div class="fbg">
-                    <img src=<%=require('./images/svg-optimized/foreground.svg').default%>>
-                </div>
+                <!--                <div class="fbg">-->
+                <!--                    <img src=<%=require('./images/svg-optimized/foreground.svg').default%>>-->
+                <!--                </div>-->
             </div>
+
+            <div class="road half left">
+                <div class="heart"></div>
+                <div class="marker"></div>
+                <div class="lines"></div>
+            </div>
+            <div class="bike-rolling"></div>
         </div>
         <div id="section-four" class="panel">
             <div class="content center">
@@ -79,6 +89,10 @@
             </div>
             <div class="circle-photo">
                 <img alt="Sample Pic" src=<%=require('./images/second-section-pic.png').default%> />
+            </div>
+
+            <div class="road">
+                <div class="lines"></div>
             </div>
         </div>
         <div id="section-five" class="panel">
@@ -105,6 +119,9 @@
             <div class="circle-photo">
                 <img alt="Sample Pic" src=<%=require('./images/third-section-pic.png').default%> />
             </div>
+            <div class="road">
+                <div class="lines"></div>
+            </div>
         </div>
         <div id="section-six" class="panel">
             <div class="content center">
@@ -126,9 +143,10 @@
                     </a>
                 </div>
             </div>
+            <div class="road half end">
+                <div class="lines"></div>
+            </div>
         </div>
-    </div>
-    <div id="layers">
     </div>
 
     <ul class="section-anchors">
@@ -161,10 +179,6 @@
 </div>
 </body>
 
-<script type="text/javascript">
-    setTimeout(function () {
-        document.getElementsByClassName('img.behind-image')
-    }, 2000)
-</script>
+<script type="text/javascript"></script>
 
 </html>
