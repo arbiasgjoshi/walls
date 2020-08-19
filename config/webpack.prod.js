@@ -185,7 +185,7 @@ module.exports = {
                 useShortDoctype: true,
                 minifyJS: true,
                 minifyCSS: true,
-                minifyURLs: false,
+                minifyURLs: true,
             },
         }),
         new MiniCssExtractPlugin({

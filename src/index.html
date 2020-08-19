@@ -9,176 +9,150 @@
 </head>
 
 <body>
+    <div class="container">
+        <!--  TODO Header Container  -->
+        <div class="panels">
+            <div id="section-one" class="panel">
+                <div id="gif-wrapper" class="behind-mask"></div>
+                <span class="first-mask"></span>
+                <span class="second-mask"></span>
+            </div>
+            <div id="section-two" class="panel">
+                <iframe src="https://player.vimeo.com/video/448670115?loop=1&controls=1&autplay=1" id="video-player"
+                        width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                </iframe>
+            </div>
+            <div id="section-three" class="panel">
+                <div class="content">
+                    <h2>
+                        We want to increase happiness <br>through community support.
+                    </h2>
+                    <h2>
+                        Will you join our new journey to give more meaning <br>
+                        to our heart and make the world a happier, <br>
+                        more inclusive place on street at a time?
+                    </h2>
+                </div>
+                <div class="circle-photo">
+                    <img alt="Sample Pic" src=<%=require('./images/first-section-pic.png').default%> />
+                </div>
+                <div class="svg-container">
+                    <div id="sun"></div>
+                    <div id="lines"></div>
+                    <div class="bgs">
+                        <div id="firstBg"></div>
+                        <div id="secondBg"></div>
+                        <div id="thirdBg"></div>
+                        <div id="fourthBg"></div>
+                    </div>
+                </div>
+                <div class="road half left">
+                    <div class="heart"></div>
+                    <div class="marker"></div>
+                </div>
+                <div class="bike-rolling"></div>
+            </div>
+            <div id="section-four" class="panel">
+                <div class="content center">
+                    <div class="sub-pages" id="first-sub">
+                        <a href="#" class="sub-page-link">
+                            <span class="number">1</span>
+                            <h2>
+                                Wall's Brand <br>
+                                Purpose
+                            </h2>
+                            <span class="heart-ico"></span>
+                        </a>
+                        <a href="#" class="sub-page-link">
+                            <span class="number">2</span>
+                            <h2>
+                                2021 activation<br>
+                                Calendar
+                            </h2>
+                            <span class="heart-ico"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="circle-photo">
+                    <img alt="Sample Pic" src=<%=require('./images/second-section-pic.png').default%> />
+                </div>
+            </div>
+            <div id="section-five" class="panel">
+                <div class="content center">
+                    <div class="sub-pages" id="second-sub">
+                        <a href="#" class="sub-page-link">
+                            <span class="number">3</span>
+                            <h2>
+                                Channel Specific <br>
+                                Plans
+                            </h2>
+                            <span class="heart-ico"></span>
+                        </a>
+                        <a href="#" class="sub-page-link">
+                            <span class="number">4</span>
+                            <h2>
+                                Communication<br>
+                                our Purpose
+                            </h2>
+                            <span class="heart-ico"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="circle-photo">
+                    <img alt="Sample Pic" src=<%=require('./images/third-section-pic.png').default%> />
+                </div>
+            </div>
+            <div id="section-six" class="panel">
+                <div class="content center">
+                    <div class="sub-pages" id="third-sub">
+                        <a href="#" class="sub-page-link">
+                            <span class="number">3</span>
+                            <h2>
+                                What Success <br>
+                                Looks Like
+                            </h2>
+                            <span class="heart-ico"></span>
+                        </a>
+                        <a href="#" class="sub-page-link">
+                            <span class="number">4</span>
+                            <h2>
+                                FAQS
+                            </h2>
+                            <span class="heart-ico"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div class="container">
-    <div id="header">
-        <nav id="menu">
-
-        </nav>
+        <ul class="section-anchors">
+            <li>
+                <button id="one"></button>
+            </li>
+            <li>
+                <button id="two"></button>
+            </li>
+            <li>
+                <button id="three"></button>
+            </li>
+            <li>
+                <button id="four"></button>
+            </li>
+            <li>
+                <button id="five"></button>
+            </li>
+            <li>
+                <button id="six"></button>
+            </li>
+        </ul>
+        <div id="footer">
+            <span id="footer-logo"></span>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto commodi, corporis cupiditate dolor
+                doloribus, ea eligendi ex exercitationem expedita.
+            </p>
+        </div>
     </div>
-    <div class="panels">
-        <div id="section-one" class="panel">
-            <div id="gif-wrapper" class="behind-mask"></div>
-            <span class="first-mask"></span>
-            <span class="second-mask"></span>
-        </div>
-        <div id="section-two" class="panel">
-            <iframe src="https://player.vimeo.com/video/448670115?loop=1&controls=1&autplay=1" id="video-player"
-                    width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
-            </iframe>
-        </div>
-        <div id="section-three" class="panel">
-            <div class="content">
-                <h2>
-                    We want to increase happiness <br>through community support.
-                </h2>
-                <h2>
-                    Will you join our new journey to give more meaning <br>
-                    to our heart and make the world a happier, <br>
-                    more inclusive place on street at a time?
-                </h2>
-            </div>
-            <div class="circle-photo">
-                <img alt="Sample Pic" src=<%=require('./images/first-section-pic.png').default%> />
-            </div>
-            <div class="svg-container">
-                <!--                <div id="sun">-->
-                <!--                    &lt;!&ndash; TODO: Sun image to be sent from client!&ndash;&gt;-->
-                <!--                </div>-->
-                <!--                <div class="dbg">-->
-                <!--                    &lt;!&ndash;                    <img src=<%=require('./images/svg-optimized/far-bg.svg').default%>>&ndash;&gt;-->
-                <!--                </div>-->
-                <div class="bg">
-                    <img id="second-bg" src=<%=require('./images/svg-optimized/bg.svg').default%>>
-                </div>
-                <div class="mbg">
-                    <img id="third-bg" src=<%=require('./images/svg-optimized/midground.svg').default%>>
-                </div>
-                <!--                <div class="fbg">-->
-                <!--                    <img src=<%=require('./images/svg-optimized/foreground.svg').default%>>-->
-                <!--                </div>-->
-            </div>
-
-            <div class="road half left">
-                <div class="heart"></div>
-                <div class="marker"></div>
-                <div class="lines"></div>
-            </div>
-            <div class="bike-rolling"></div>
-        </div>
-        <div id="section-four" class="panel">
-            <div class="content center">
-                <div class="sub-pages">
-                    <a href="#" class="sub-page-link">
-                        <span class="number">1</span>
-                        <h2>
-                            Wall's Brand <br>
-                            Purpose
-                        </h2>
-                        <span class="heart-ico"></span>
-                    </a>
-                    <a href="#" class="sub-page-link">
-                        <span class="number">2</span>
-                        <h2>
-                            2021 activation<br>
-                            Calendar
-                        </h2>
-                        <span class="heart-ico"></span>
-                    </a>
-                </div>
-            </div>
-            <div class="circle-photo">
-                <img alt="Sample Pic" src=<%=require('./images/second-section-pic.png').default%> />
-            </div>
-
-            <div class="road">
-                <div class="lines"></div>
-            </div>
-        </div>
-        <div id="section-five" class="panel">
-            <div class="content center">
-                <div class="sub-pages">
-                    <a href="#" class="sub-page-link">
-                        <span class="number">3</span>
-                        <h2>
-                            Channel Specific <br>
-                            Plans
-                        </h2>
-                        <span class="heart-ico"></span>
-                    </a>
-                    <a href="#" class="sub-page-link">
-                        <span class="number">4</span>
-                        <h2>
-                            Communication<br>
-                            our Purpose
-                        </h2>
-                        <span class="heart-ico"></span>
-                    </a>
-                </div>
-            </div>
-            <div class="circle-photo">
-                <img alt="Sample Pic" src=<%=require('./images/third-section-pic.png').default%> />
-            </div>
-            <div class="road">
-                <div class="lines"></div>
-            </div>
-        </div>
-        <div id="section-six" class="panel">
-            <div class="content center">
-                <div class="sub-pages">
-                    <a href="#" class="sub-page-link">
-                        <span class="number">3</span>
-                        <h2>
-                            What Success <br>
-                            Looks Like
-                        </h2>
-                        <span class="heart-ico"></span>
-                    </a>
-                    <a href="#" class="sub-page-link">
-                        <span class="number">4</span>
-                        <h2>
-                            FAQS
-                        </h2>
-                        <span class="heart-ico"></span>
-                    </a>
-                </div>
-            </div>
-            <div class="road half end">
-                <div class="lines"></div>
-            </div>
-        </div>
-    </div>
-
-    <ul class="section-anchors">
-        <li>
-            <button id="one"></button>
-        </li>
-        <li>
-            <button id="two"></button>
-        </li>
-        <li>
-            <button id="three"></button>
-        </li>
-        <li>
-            <button id="four"></button>
-        </li>
-        <li>
-            <button id="five"></button>
-        </li>
-        <li>
-            <button id="six"></button>
-        </li>
-    </ul>
-    <div id="footer">
-        <span id="footer-logo"></span>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto commodi, corporis cupiditate dolor
-            doloribus, ea eligendi ex exercitationem expedita.
-        </p>
-    </div>
-</div>
 </body>
-
-<script type="text/javascript"></script>
 
 </html>

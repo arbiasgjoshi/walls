@@ -4,11 +4,12 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  -webkit-transition: ease all 0.15s;
-  -moz-transition: ease all 0.15s;
-  -ms-transition: ease all 0.15s;
-  -o-transition: ease all 0.15s;
-  transition: ease all 0.15s;
+  overflow-x: hidden;
+  //-webkit-transition: ease all 0.15s;
+  //-moz-transition: ease all 0.15s;
+  //-ms-transition: ease all 0.15s;
+  //-o-transition: ease all 0.15s;
+  //transition: ease all 0.15s;
 }
 
 body,
@@ -33,6 +34,7 @@ svg{
   flex-wrap: nowrap;
   z-index: 3;
   position: relative;
+  overflow-y: hidden;
   background-color: rgba(2, 142, 189, 0.3);
   .panel {
     width: 16.666667%;
@@ -88,21 +90,7 @@ svg{
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          //opacity: 0;
-          //-webkit-transition: ease all 0.15ms;
-          //-moz-transition: ease all 0.15ms;
-          //-ms-transition: ease all 0.15ms;
-          //-o-transition: ease all 0.15ms;
-          //transition: ease all 0.15ms;
-          //-webkit-transform: translateY(-50%);
-          //-moz-transform: translateY(-50%);
-          //-ms-transform: translateY(-50%);
-          //-o-transform: translateY(-50%);
-          //transform: translateY(-50%);
-          //
-          //&.transition{
-          //  opacity: 1;
-          //}
+          position: relative;
 
           span.number{
             font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
@@ -138,9 +126,9 @@ svg{
           &:after{
             content: '';
             position: absolute;
-            height: 250px;
+            height: 180px;
             width: 64px;
-            bottom: 214px;
+            bottom: -188px;
             background-color: rgba(255,255,255,0.3);
             background-image: url('../images/vertical-lines.png');
             background-repeat: repeat-y;
@@ -181,6 +169,7 @@ svg{
     .road{
       position: absolute;
       bottom: 150px;
+      height: 64px;
       width: 100%;
       left: 0;
       z-index: 20;
@@ -278,15 +267,16 @@ svg{
   height: 236px;
   display: inline-block;
   position: absolute;
+  z-index: 20;
+  bottom: 143px;
+  left: 68vw;
   background-image: url('../images/bike-rolling.png');
   background-repeat: no-repeat;
   -webkit-background-size: contain;
   background-size: contain;
-  bottom: 157px;
-  left: 70%;
-  z-index: 20;
 }
 
+div.bgs,
 div.svg-container{
   position: absolute;
   z-index: 1;
@@ -294,46 +284,61 @@ div.svg-container{
   bottom: 0;
   width: 400vw;
   height: 100vh;
-  //background-color: #00a0d6;
+  overflow: hidden;
   > div:not(.sun){
-    width: 100%;
+    width: 450vw;
     height: 100%;
     display: flex;
     align-items: flex-end;
     > img,
     > svg{
-      width: 400vw;
+      width: 450vw;
       height: auto;
     }
   }
-  .bg{
+
+  #lines{
+    width: calc(322vw - 23px);
+    left: 50vw;
+    height: 64px;
+    background-image: url('../images/road-lines.png');
+    background-position: left center;
+    background-repeat: repeat-x;
+    background-size: auto 16px;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    z-index: 10;
+    bottom: 150px;
+  }
+
+  #firstBg{
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -10vh;
     z-index: 1;
-    opacity: 0.1;
+    opacity: 0.25;
   }
 
-  .dbg{
+  #secondBg{
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -10vh;
     z-index: 2;
-    opacity: 0.3;
+    opacity: 0.5;
   }
 
-  .mbg{
+  #thirdBg{
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -10vh;
     z-index: 3;
-    opacity: 0.6;
+    opacity: 0.75;
   }
 
-  .fbg{
+  #fourthBg{
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -10vh;
     z-index: 4;
     opacity: 1;
   }
@@ -399,8 +404,13 @@ div.svg-container{
     z-index: 2;
     width: 100%;
     height: 100%;
-    background-color: #fff;
-    transition: ease all 0.25s;
+    transition-delay: 1s;
+    transition: ease all 0.5s;
+    background-image: url('../images/circle-bg.png');
+    background-repeat: no-repeat;
+    background-position: calc(50% - 4px) calc(50% - 4px);
+    background-size: 88.5vh auto;
+    opacity: 0;
 
     img{
       max-height: 75vh;
@@ -410,7 +420,7 @@ div.svg-container{
 
   &.loaded{
     .behind-mask{
-      background-color: #e42513;
+      opacity: 1;
     }
   }
 }
