@@ -48,6 +48,33 @@ svg{
     position: relative;
     box-sizing: border-box;
     z-index: 2;
+    &::before{
+      content: "";
+      width: 100%;
+      height: 50%;
+      position: absolute;
+      z-index: 19;
+      left: 0;
+      top: 0;
+      background-image: url("../images/top-gradient-bg.png");
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: cover;
+    }
+
+    &::after{
+      content: "";
+      width: 100%;
+      height: 50%;
+      position: absolute;
+      z-index: 19;
+      left: 0;
+      bottom: 0;
+      background-image: url("../images/bottom-gradient-bg.png");
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      background-size: cover;
+    }
 
     .content{
       position: relative;
@@ -69,16 +96,16 @@ svg{
       &.center{
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
         padding-top: 0;
       }
 
       div.sub-pages{
         display: flex;
-        width: 60vw;
+        width: 65%;
         flex-direction: row;
         justify-content: space-between;
-        margin-top: -10%;
+        margin-bottom: 402px;
 
         a.sub-page-link{
           width: 450px;
@@ -210,6 +237,17 @@ svg{
     &#section-one{
       overflow: hidden;
       background-color: #fff;
+      &::after,
+      &::before{
+        content: none;
+      }
+    }
+
+    &#section-two{
+      &::after,
+      &::before{
+        content: none;
+      }
     }
 
     &#section-four{
@@ -388,10 +426,10 @@ div.svg-container{
     top: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../images/second-mask.png");
+    background-image: url("../images/sunbeams.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    //background-size: auto 100%;
     z-index: 6;
     opacity: 0;
   }

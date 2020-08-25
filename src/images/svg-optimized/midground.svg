@@ -3,13 +3,15 @@
 <svg version="1.1" id="Midground" xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
      viewBox="0 0 8000 922.2" style="enable-background:new 0 0 8000 922.2;" xml:space="preserve">
-     <style type="text/css">.st0 {fill-rule: evenodd;clip-rule: evenodd;fill: #028EBD;}</style>
-     <g>
-        <path class="st0"
+     <style type="text/css">
+         .midground {fill-rule: evenodd;clip-rule: evenodd;fill: #028EBD;}
+     </style>
+    <g>
+        <path class="midground"
               d="M4762.1,356.2C4762.1,356.2,4762.1,356.2,4762.1,356.2C4762.1,356.2,4762.1,356.2,4762.1,356.2L4762.1,356.2z"/>
-        <path class="st0"
+        <path class="midground"
               d="M4551.1,426L4551.1,426C4551.1,425.9,4551.1,425.9,4551.1,426C4551.1,426,4551.1,426,4551.1,426z"/>
-        <path class="st0"
+        <path class="midground"
               d="M7851.4,594.6v-17.4h12.4v-23.8h-12.4v-55.7h14.9v-10h-14.9V377.3h8.2v-16.2h-351l140.3,112h-48.3v121.5h-15.8
                                 V457.4h19.1l-140.4-112.1l-140.5,112.1h19.1v137.2h-43v-84.4h6.8v-43.3h2.9v-6.4h-9.7V389h3.9v-13.6h-3.9V306h3.9v-13.6h-3.9V223
                                 h3.9v-13.6h-3.9V140h3.9v-13.6h-2.8V57h2.8V43.3h-295.5V57h3.6v69.4h-3.6V140h3.9v69.4h-3.9V223h3.9v69.4h-3.9V306h3.9v42.7
@@ -4362,6 +4364,6 @@
                                  M7653.4,548.2V503h20.5v45.3H7653.4z M7682.8,497.7h-64.9v-10h64.9V497.7z M7762.7,577.2h-65v-23.8h65V577.2z M7706.5,548.2V503
                                 h20.5v45.3H7706.5z M7733.3,548.2V503h20.5v45.3H7733.3z M7762.7,497.7h-65v-10h65V497.7z M7842.6,577.2h-65v-23.8h65V577.2z
                                  M7786.4,548.2V503h20.5v45.3H7786.4z M7813.2,548.2V503h20.5v45.3H7813.2z M7842.6,497.7h-65v-10h65V497.7z"/>
-        <polygon class="st0" points="4551.1,425.9 4551.1,425.9 4551.1,425.9 	"/>
+        <polygon class="midground" points="4551.1,425.9 4551.1,425.9 4551.1,425.9 	"/>
     </g>
 </svg>
