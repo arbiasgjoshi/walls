@@ -75,8 +75,8 @@ function scrollTrigger() {
             yoyo: true,
             paused: true,
             scrollTrigger: {
-                trigger: '#section-two',
-                start: "left top",
+                trigger: '#section-three',
+                start: "center bottom",
                 scrub: 1,
                 end: () => "+=" + document.querySelector(".container").offsetWidth
             }
@@ -111,7 +111,7 @@ function scrollTrigger() {
             paused: true,
             scrollTrigger: {
                 trigger: '#section-two',
-                start: "left top",
+                start: "center bottom",
                 scrub: 1,
                 end: () => "+=" + document.querySelector(".container").offsetWidth
             }
@@ -142,7 +142,7 @@ function scrollTrigger() {
             paused: true,
             scrollTrigger: {
                 trigger: '#section-two',
-                start: "left top",
+                start: "center bottom",
                 scrub: 1,
                 end: () => "+=" + document.querySelector(".container").offsetWidth
             }
@@ -173,7 +173,7 @@ function scrollTrigger() {
             paused: true,
             scrollTrigger: {
                 trigger: '#section-two',
-                start: "left top",
+                start: "center bottom",
                 scrub: 1,
                 end: () => "+=" + document.querySelector(".container").offsetWidth
             }
@@ -204,7 +204,7 @@ function scrollTrigger() {
             paused: true,
             scrollTrigger: {
                 trigger: '#section-two',
-                start: "left top",
+                start: "center bottom",
                 scrub: 1,
                 end: () => "+=" + document.querySelector(".container").offsetWidth
             }
@@ -233,7 +233,7 @@ function scrollTrigger() {
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-two',
-                start: "left top",
+                start: "center center",
                 scrub: 1,
                 end: () => "+=" + document.querySelector(".container").offsetWidth
             }
@@ -321,7 +321,7 @@ function scrollTrigger() {
     gsap.timeline({
             scrollTrigger: {
                 once: true,
-                start: "bottom+=150vh top",
+                start: "bottom+=100vh top",
                 end: () => "+=" + document.querySelector(".container").offsetWidth
             }
         })        
@@ -341,27 +341,27 @@ function scrollTrigger() {
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-three',
-                start: "bottom+=150vh top",
+                start: "bottom+=100vh top",
                 once: true,
                 scrub: false,
                 end: () => "+=" + document.querySelector(".container").offsetWidth
             }
         })
         .from('#first-sub a', {
-            y: -150,
-            opacity: 0,
+            scale: 0,
+            y: 100,
             ease: "linear"
         })
         .to('#first-sub a', {
+            scale: 1,
             y: 0,
-            opacity: 1,
             ease: "linear"
         });
 
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-four',
-                start: "bottom+=50% top",
+                start: "bottom+=250vh top",
                 once: true,
                 end: () => "+=" + document.querySelector(".container").offsetWidth
             }
@@ -383,20 +383,20 @@ function scrollTrigger() {
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-four',
-                start: "bottom+=50% top",
+                start: "bottom+=250vh top",
                 once: true,
                 scrub: false,
                 end: () => "+=" + document.querySelector(".container").offsetWidth
             }
         })
         .from('#second-sub a', {
-            y: -150,
-            opacity: 0,
+            scale: 0,
+            y: 100,
             ease: "linear"
         })
         .to('#second-sub a', {
+            scale: 1,
             y: 0,
-            opacity: 1,
             ease: "linear"
         });
 
@@ -405,7 +405,7 @@ function scrollTrigger() {
     gsap.timeline({
         scrollTrigger: {
             trigger: '#section-five',
-            start: "bottom+=100% top",
+            start: "bottom+=280vh top",
             once: true,
             end: () => "+=" + document.querySelector(".container").offsetWidth
         }
@@ -425,24 +425,30 @@ function scrollTrigger() {
 
     gsap.timeline({
             scrollTrigger: {
-                trigger: '#section-six',
-                start: "bottom+=100% top",
+                trigger: '#section-five',
+                start: "bottom+=300vh top",
                 once: true,
-                scrub: false,
                 end: () => "+=" + document.querySelector(".container").offsetWidth
             }
         })
         .from('#third-sub a', {
-            y: -150,
-            opacity: 0,
+            scale: 0,
+            y: 100,
             ease: "linear"
         })
         .to('#third-sub a', {
+            scale: 1,
             y: 0,
-            opacity: 1,
             ease: "linear"
         });
 
+}
+
+document.getElementById('toggleMenu').onclick = function() {
+    this.classList.toggle('is-active');
+    const menu = document.getElementById('mainMenu');
+    const classes = menu.classList;
+    classes.toggle('show');
 }
 
 

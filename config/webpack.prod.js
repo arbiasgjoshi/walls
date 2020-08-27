@@ -177,16 +177,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(ROOT_DIRECTORY, 'src/index.html'),
             filename: 'index.html',
-            minify: {
-                collapseWhitespace: true,
-                removeComments: true,
-                removeRedundantAttributes: true,
-                removeStyleLinkTypeAttributes: true,
-                useShortDoctype: true,
-                minifyJS: true,
-                minifyCSS: true,
-                minifyURLs: true,
-            },
+            minify: false,
         }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash:8].bundle.css',

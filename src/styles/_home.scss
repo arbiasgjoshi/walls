@@ -19,14 +19,15 @@ html {
   margin: 0;
 }
 
-svg{
+svg {
   width: inherit;
 }
 
 // ---------- SCROLLING STYLES ---------- //
-.container{
+.container {
   position: relative;
 }
+
 .panels {
   width: 600vw;
   height: 100vh;
@@ -36,6 +37,7 @@ svg{
   position: relative;
   overflow-y: hidden;
   background-color: rgba(2, 142, 189, 0.3);
+
   .panel {
     width: 16.666667%;
     height: 100%;
@@ -48,7 +50,8 @@ svg{
     position: relative;
     box-sizing: border-box;
     z-index: 2;
-    &::before{
+
+    &::before {
       content: "";
       width: 100%;
       height: 50%;
@@ -62,7 +65,7 @@ svg{
       background-size: cover;
     }
 
-    &::after{
+    &::after {
       content: "";
       width: 100%;
       height: 50%;
@@ -76,101 +79,33 @@ svg{
       background-size: cover;
     }
 
-    .content{
+    .content {
       position: relative;
       z-index: 20;
       height: 100%;
       padding-top: 10vh;
 
-      h2{
+      h2 {
         font-size: 7vh;
         line-height: 7.5vh;
         font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
         margin-bottom: 80px;
         color: #fff;
-        &:last-of-type{
+
+        &:last-of-type {
           margin-bottom: 0;
         }
       }
 
-      &.center{
+      &.center {
         display: flex;
         justify-content: center;
         align-items: flex-end;
         padding-top: 0;
       }
-
-      div.sub-pages{
-        display: flex;
-        width: 60%;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 402px;
-
-        a.sub-page-link{
-          width: 43vh;
-          height: 43vh;
-          background-color: #fff;
-          text-decoration: none;
-          border-radius: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          position: relative;
-
-          span.number{
-            font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
-            color: #fff;
-            font-size: 6vh;
-            line-height: 8.5vh;
-            width: 8.5vh;
-            height: 8.5vh;
-            border-radius: 100%;
-            margin-top: 20px;
-            margin-bottom: 0;
-          }
-
-          h2{
-            font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
-            font-size: 6vh;
-            line-height: 6.5vh;
-            margin-bottom: auto;
-            margin-top: 16%;        
-          }
-
-          span.heart-ico{
-            width: 90px;
-            height: 90px;
-            background-image: url('../images/heart.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 75% auto;
-            margin-bottom: -40px;
-            border-radius: 100%;
-            box-shadow: -7px 14px 15px 0px rgba(0, 0, 0, 0.5);
-            position: absolute;
-            z-index: 2;
-            bottom: 0;
-          }
-
-          &:after{
-            content: '';
-            position: absolute;
-            height: 180px;
-            width: 64px;
-            bottom: -188px;
-            background-color: rgba(255,255,255,0.3);
-            background-image: url('../images/vertical-lines.png');
-            background-repeat: repeat-y;
-            background-position: bottom center;
-            z-index: 1;
-          }
-        }
-      }
     }
 
-    .circle-photo{
+    .circle-photo {
       display: flex;
       width: 40vh;
       height: 40vh;
@@ -182,13 +117,14 @@ svg{
       right: -20vh;
       margin-top: 0;
       z-index: 20;
-      img{
+
+      img {
         width: 100%;
         height: auto;
-      }      
+      }
     }
 
-    .road{
+    .road {
       position: absolute;
       bottom: 150px;
       height: 64px;
@@ -196,7 +132,7 @@ svg{
       left: 0;
       z-index: 20;
 
-      .heart{
+      .heart {
         width: 128px;
         height: 128px;
         display: block;
@@ -206,96 +142,197 @@ svg{
         margin-top: -35px;
       }
 
-      .lines{
+      .lines {
         height: 64px;
         width: 100%;
         background-image: url('../images/road-lines.png');
         background-position: left center;
         background-repeat: repeat-x;
         background-size: auto 16px;
-        background-color: rgba(255,255,255, 0.3);
+        background-color: rgba(255, 255, 255, 0.3);
       }
 
-      &.half{
+      &.half {
         width: 50%;
 
-        &.left{
+        &.left {
           left: 50%;
         }
+
         &.end {
           left: 0;
           width: 71%;
         }
       }
     }
-  
-    &#section-one{
+
+    &#section-one {
       overflow: hidden;
       background-color: #fff;
+
       &::after,
-      &::before{
+      &::before {
         content: none;
       }
     }
 
-    &#section-two{
+    &#section-two {
+
       &::after,
-      &::before{
+      &::before {
         content: none;
       }
     }
+  }
 
-    &#section-four{
-      .content{
-        div.sub-pages{
-          a.sub-page-link{
-            h2{
-              color: #ff527f;
-            }
-            span.number,
-            span.heart-ico{
-              background-color: #ff527f;
-            }
-          }
+
+  div.subpage-wrapper {
+    position: absolute;
+    z-index: 20;
+    height: calc(100vh - 263px);
+    width: 300vw;
+    display: flex;
+    flex-direction: row;
+    left: 50vw;
+    bottom: 64px;
+    align-items: center;
+  }
+
+  div.sub-pages {
+    display: flex;
+    width: 100vw;
+    padding: 0 20vw;
+    flex-direction: row;
+    justify-content: space-between;
+
+    a.sub-page-link {
+      width: 43vh;
+      height: 43vh;
+      background-color: #fff;
+      text-decoration: none;
+      border-radius: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      span.number {
+        font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
+        color: #fff;
+        font-size: 6vh;
+        line-height: 8.5vh;
+        width: 8.5vh;
+        height: 8.5vh;
+        border-radius: 100%;
+        margin-top: 20px;
+        margin-bottom: 0;
+      }
+
+      h2 {
+        font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
+        font-size: 6vh;
+        line-height: 6.5vh;
+        margin-bottom: auto;
+        margin-top: 16%;
+      }
+
+      span.heart-ico {
+        width: 90px;
+        height: 90px;
+        background-image: url('../images/heart.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 75% auto;
+        margin-bottom: -40px;
+        border-radius: 100%;
+        box-shadow: -7px 14px 15px 0px rgba(0, 0, 0, 0.5);
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+      }
+    }
+
+    &#first-sub {
+      a.sub-page-link {
+        h2 {
+          color: #ff527f;
+        }
+
+        span.number,
+        span.heart-ico {
+          background-color: #ff527f;
         }
       }
     }
 
-    &#section-five{
-      .content{
-        div.sub-pages{
-          a.sub-page-link{
-            h2{
-              color: #00a0d6;
-            }
-            span.number,
-            span.heart-ico{
-              background-color: #00a0d6;
-            }
-          }
+    &#second-sub {
+      a.sub-page-link {
+        h2 {
+          color: #00a0d6;
+        }
+
+        span.number,
+        span.heart-ico {
+          background-color: #00a0d6;
         }
       }
     }
 
-    &#section-six{
-      .content{
-        div.sub-pages{
-          a.sub-page-link{
-            h2{
-              color: #46a916;
-            }
-            span.number,
-            span.heart-ico{
-              background-color: #46a916;
-            }
+    &#third-sub {
+      
+        a.sub-page-link {
+          h2 {
+            color: #46a916;
+          }
+
+          span.number,
+          span.heart-ico {
+            background-color: #46a916;
           }
         }
-      }
+      
     }
   }
 }
 
-.bike-rolling{
+.vertical-road {
+  position: absolute;
+  height: 180px;
+  width: 64px;
+  background-color: rgba(255, 255, 255, 0.3);
+  background-image: url('../images/vertical-lines.png');
+  background-repeat: repeat-y;
+  background-position: bottom center;
+  z-index: 1;
+  bottom: 64px;
+
+
+  &.fl{
+    left: calc(75vw + 72px);
+  }
+  &.fr{
+    left: calc(114vw + 72px);
+  }
+
+  &.sl{
+    left: calc(175vw + 75px);
+  }
+  &.sr{
+    left: calc(214vw + 75px);
+  }
+  
+  &.tl{
+    right: calc(40vw - 25px);
+  }
+  
+  &.tr{
+    right: 0;
+  }
+  
+}
+
+.bike-rolling {
   width: 219px;
   height: 236px;
   display: inline-block;
@@ -310,7 +347,7 @@ svg{
 }
 
 div.bgs,
-div.svg-container{
+div.svg-container {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -318,19 +355,21 @@ div.svg-container{
   width: 400vw;
   height: 100vh;
   overflow: hidden;
-  > div:not(.sun){
+
+  >div:not(.sun) {
     width: 450vw;
     height: 100%;
     display: flex;
     align-items: flex-end;
-    > img,
-    > svg{
+
+    >img,
+    >svg {
       width: 450vw;
       height: auto;
     }
   }
 
-  #lines{
+  #lines {
     width: calc(322vw - 23px);
     left: 50vw;
     height: 64px;
@@ -344,14 +383,14 @@ div.svg-container{
     bottom: 150px;
   }
 
-  #bodyBg{
+  #bodyBg {
     position: absolute;
     left: 0;
     bottom: 0;
     z-index: 0;
   }
 
-  #firstBg{
+  #firstBg {
     position: absolute;
     left: 0;
     bottom: -10vh;
@@ -359,7 +398,7 @@ div.svg-container{
     // opacity: 0.25;
   }
 
-  #secondBg{
+  #secondBg {
     position: absolute;
     left: 0;
     bottom: -10vh;
@@ -367,7 +406,7 @@ div.svg-container{
     // opacity: 0.5;
   }
 
-  #thirdBg{
+  #thirdBg {
     position: absolute;
     left: 0;
     bottom: -10vh;
@@ -375,7 +414,7 @@ div.svg-container{
     // opacity: 0.75;
   }
 
-  #fourthBg{
+  #fourthBg {
     position: absolute;
     left: 0;
     bottom: -10vh;
@@ -384,7 +423,7 @@ div.svg-container{
   }
 
 
-  #secondary-bg{
+  #secondary-bg {
     transform: translate3d(100px, 0px, 0px);
   }
 }
@@ -409,7 +448,7 @@ div.svg-container{
     z-index: 2;
   }
 
-  .behind-mask{
+  .behind-mask {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -419,38 +458,37 @@ div.svg-container{
     height: 100%;
     transition-delay: 1s;
     transition: ease all 0.5s;
-    background-image: url('../images/circle-bg.png');
-    background-repeat: no-repeat;
-    background-position: calc(50% - 4px) calc(50% - 4px);
-    background-size: 87.5vh auto;
     opacity: 0;
 
-    img{
+    img {
       max-height: 75vh;
       width: auto;
     }
   }
 
-  &.loaded{
-    .behind-mask{
+  &.loaded {
+    .behind-mask {
       opacity: 1;
     }
   }
 }
 
-#section-two{
+#section-two {
+  overflow: hidden;
   iframe {
     width: 100vw;
-    height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+    height: 56.25vw;
+    /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
     min-height: 100vh;
-    min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+    min-width: 177.77vh;
+    /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
-  &:before{
+  &:before {
     content: '';
     width: 212px;
     height: 212px;
@@ -461,7 +499,7 @@ div.svg-container{
     margin-left: -106px;
     margin-top: -106px;
     background: url('../images/pause-video.png') no-repeat center;
-    -webkit-background-size: contain  ;
+    -webkit-background-size: contain;
     background-size: contain;
   }
 }
@@ -473,12 +511,14 @@ div.svg-container{
     width: 300%;
     height: 300%;
   }
+
   50% {
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
   }
+
   to {
     left: 0;
     top: 0;
@@ -488,16 +528,18 @@ div.svg-container{
 }
 
 @keyframes fadeIn {
-   from {
-     opacity: 0;
-   }
-   50% {
-     opacity: 0.5;
-   }
-   to {
-     opacity: 1;
-   }
- }
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 
 .section-anchors {
   position: fixed;
@@ -510,7 +552,7 @@ div.svg-container{
   transform: translateX(-50%);
   display: flex;
   flex-direction: row;
-  z-index: 99;
+  z-index: 20;
 
   li {
     width: 140px;
@@ -520,7 +562,8 @@ div.svg-container{
     background-color: rgba(0, 0, 0, 0.3);
     display: inline-flex;
 
-    a, button {
+    a,
+    button {
       display: inline-flex;
       width: 100%;
       height: 4px;

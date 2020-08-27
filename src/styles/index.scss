@@ -41,6 +41,11 @@ header {
     #toggleMenu{
       background-color: #fff;
       border-radius: 100%;
+
+      &:focus{
+        border: 0;
+        outline: 0;
+      }
     }
 
     a.logo {
@@ -54,7 +59,7 @@ header {
   .menu-wrapper {
     position: absolute;
     left: -32px;
-    top: 0;
+    top: -1px;
     width: 100vw;
     height: 100vh;
     background-color: #e42513;
@@ -66,7 +71,15 @@ header {
     justify-content: center;
     align-items: center;
     position: relative;
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    backface-visibility: hidden;
+    transition: ease opacity 0.2s;
+
+    &.show{
+      opacity: 1;
+      visibility: visible;
+    }
 
     ul.menu-list {
       position: relative;
