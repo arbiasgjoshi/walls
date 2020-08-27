@@ -10,12 +10,81 @@
 
 <body>
 <div class="container">
-    <!--  TODO Header Container  -->
+    <header>
+        <nav>
+            <button class="hamburger hamburger--collapse" id="toggleMenu" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+            <a href="#" class="logo">
+                <img height="75" src=<%=require('./images/main-logo.png').default%> alt="">
+            </a>
+            <a href="#" class="download-icon">
+                <img width="30" height="30" src=<%=require('./images/download-icon.png').default%> alt="">
+            </a>
+        </nav>
+        <div class="menu-wrapper">
+            <ul class="menu-list">
+                <li>
+                    <span class="no">1</span>
+                    <h3>Wall's Brand and Purpose</h3>
+                    <ul class="submenu-links">
+                        <li><a href="#">History, Purpose, Power of Heart</a></li>
+                        <li><a href="#">10p Framework</a></li>
+                        <li><a href="#">New BCI</a></li>
+                        <li><a href="#">Blk</a></li>
+                        <li><a href="#">Fundamentals of Purpose</a></li>
+                        <li><a href="#">Role of Products</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="no">2</span>
+                    <h3>2021 Activation Calendar</h3>
+                    <ul class="submenu-links">
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="no">3</span>
+                    <h3>Channel Specific Plans</h3>
+                    <ul class="submenu-links">
+                        <li><a href="#">Link 13</a></li>
+                        <li><a href="#">Link 21</a></li>
+                        <li><a href="#">Link 34</a></li>
+                        <li><a href="#">Link 32</a></li>
+                        <li><a href="#">Link 34</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="no">4</span>
+                    <h3>Communicating Our <br> Purpose (Assets)</h3>
+                    <ul class="submenu-links">
+                        <li><a href="#">Link 51</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 32</a></li>
+                        <li><a href="#">Link 11</a></li>
+                        <li><a href="#">Link 331</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="no">5</span>
+                    <h3>What Success looks like</h3>
+                    <ul class="submenu-links"></ul>
+                </li>
+                <li>
+                    <span class="no">6</span>
+                    <h3>FAQ</h3>
+                </li>
+            </ul>
+        </div>
+    </header>
     <div class="panels">
         <div id="section-one" class="panel">
             <div id="gif-wrapper" class="behind-mask"></div>
             <span class="first-mask"></span>
-            <span class="second-mask"></span>
         </div>
         <div id="section-two" class="panel">
             <iframe src="https://player.vimeo.com/video/448670115?loop=1&controls=1&autplay=1" id="video-player"
@@ -33,13 +102,21 @@
                     more inclusive place on street at a time?
                 </h2>
             </div>
-            <div class="circle-photo">
+            <div class="circle-photo one">
                 <img alt="Sample Pic" src=<%=require('./images/first-section-pic.png').default%> />
             </div>
             <div class="svg-container">
                 <div id="sun"></div>
                 <div id="lines"></div>
                 <div class="bgs">
+                    <div id="bodyBg">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                        <svg version="1.1" id="bodyBG" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 8000 922.2">
+                            <rect width="100%" height="100%" class='bodyBg' fill="#e42513" />
+                          </svg>
+                    </div>
                     <div id="firstBg">
                         <?xml version="1.0" encoding="utf-8"?>
                         <!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -52,7 +129,7 @@
                                          fill: #e42513;
                                      }
                                  </style>
-                            <g>
+                                <g>
                                     <path id="XMLID_2090_"
                                           class="firstBg"
                                           d="M8000,449.4h-62.2V233.6h-39.6v-33.1l-27.9-4.8v-40.9l-6.5-2.2V101l-5.2-6.5V69.2h-35.3
@@ -83,7 +160,7 @@
                                 }
                                 </style>
                             <g id="XMLID_2075_">
-                                    <path id="XMLID_2083_" class="secondBg"
+                                <path id="XMLID_2083_" class="secondBg"
                                           d="M7907.8,398.5V296.7h-79.5v41l-47.3,9.6v21.8h-69.2v24.4h-18.4l-11.5-12.2h-31.1l-13.3,10
                                           h-19v37.9h-39.2V220.5l-19.6-18.3h-56.5v49.7H7449l-28.8,11.3V384h-39.2l-13.8,18.3v18.3h-40.4v-35.8h-15V281.9l-32.3,16.7v-52.9
                                           l-25.4-19.2h-25.4l-28.2,21.4v57.5l-23.9,18.1h-71.2l-10.5,8v78.6h-42.5V293.7l-48.4-57.6h-20.7v57.9h-27.7v-13.1h-47.3l-21.9,16.6
@@ -131,8 +208,8 @@
                                           c-9.5-6-21.2-7.3-22.7-6.6c-1.5,0.6-3.6,2-5.3,2c-1.7,0-3.1,1-3.4,2.2c-0.3,1.1,0.5,10.4,7.2,18
                                           C2726.5,193.1,2750.9,208.3,2750.9,208.3z M2815.6,219.9c2.6-0.6,10.6-1.4,12.1-1.9c-0.8,1.4-4.6,5.6-6.4,6.3
                                           c-1.8,0.7-2.8,0.4-2.8,0.4s-2.8-2.1-3.8-2.8C2815.2,221.5,2815.5,220.7,2815.6,219.9z"/>
-                                </g>
-                            </svg>
+                            </g>
+                        </svg>
                     </div>
                     <div id="thirdBg">
                         <?xml version="1.0" encoding="utf-8"?>
@@ -4506,7 +4583,7 @@
                                 h20.5v45.3H7706.5z M7733.3,548.2V503h20.5v45.3H7733.3z M7762.7,497.7h-65v-10h65V497.7z M7842.6,577.2h-65v-23.8h65V577.2z
                                  M7786.4,548.2V503h20.5v45.3H7786.4z M7813.2,548.2V503h20.5v45.3H7813.2z M7842.6,497.7h-65v-10h65V497.7z"/>
                                 <polygon class="midground" points="4551.1,425.9 4551.1,425.9 4551.1,425.9 	"/>
-    </g>
+                            </g>
                         </svg>
                     </div>
                     <div id="fourthBg">
@@ -4515,7 +4592,11 @@
                              x="0px" y="0px"
                              viewBox="0 0 8000 922.2" style="enable-background:new 0 0 8000 922.2;" xml:space="preserve">
                             <style type="text/css">
-                                .foreground {fill-rule: evenodd;clip-rule: evenodd;fill: #641007;}
+                                .foreground {
+                                    fill-rule: evenodd;
+                                    clip-rule: evenodd;
+                                    fill: #641007;
+                                }
                             </style>
                             <g id="Foreground">
                                 <g>
@@ -7876,7 +7957,7 @@
                                                         c-0.1,0.1-0.3,0.1-0.4,0.2c-1.2,0.8-2,2.3-2,3.9c0,0.3,0,0.5,0.1,0.7c0,0,0,0.1,0,0.1l0,0l2.8,19.8l-0.5,0.1l0.4,3.1h-29.7V396.4z
                                                          M6240.8,545.4c-0.6,1.6-0.9,3.1-1,4.6h-40.9v-1h-0.3c0-0.3,0-0.6,0-0.9c0-0.1,0-0.2,0-0.3c0-0.3,0-0.5,0-0.8c0-0.1,0-0.2,0-0.4
                                                         c0-0.3-0.1-0.7-0.1-1c0-0.1,0-0.3-0.1-0.4H6240.8z"/>
-                                                </g>
+                                </g>
                             </g>
                         </svg>
                     </div>
@@ -7909,7 +7990,7 @@
                     </a>
                 </div>
             </div>
-            <div class="circle-photo">
+            <div class="circle-photo two">
                 <img alt="Sample Pic" src=<%=require('./images/second-section-pic.png').default%> />
             </div>
         </div>
@@ -7934,7 +8015,7 @@
                     </a>
                 </div>
             </div>
-            <div class="circle-photo">
+            <div class="circle-photo three">
                 <img alt="Sample Pic" src=<%=require('./images/third-section-pic.png').default%> />
             </div>
         </div>
