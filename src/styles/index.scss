@@ -24,59 +24,82 @@ p {
 header {
   position: fixed;
   width: 100vw;
-  padding: 0 2rem;
+  padding: 0 1.5vw;
   left: 0;
   top: 0;
   background-color: #e42513;
   z-index: 21;
-  height: 49px;
+  height: 5.35vh;
 
   nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
+    height: 5.35vh;
 
-    #toggleMenu{
+    #toggleMenu {
       background-color: #fff;
       border-radius: 100%;
 
-      &:focus{
+      &:focus {
         border: 0;
         outline: 0;
       }
     }
 
     a.logo {
-      position: absolute;
-      top: 0;
+      margin-top: 3vh;
+      position: fixed;
       left: 50%;
-      margin-left: -77px;
+      transform: translateX(-50%);
+      z-index: 9999;
+
+      img{
+        height: 8.3vh;
+        width: auto;
+      }
+    }
+
+    .download-icon{
+      img{
+        height: 3.25vh;
+      }
     }
   }
 
   .menu-wrapper {
     position: absolute;
-    left: -32px;
-    top: -1px;
+    left: -1.5vw;
+    top: 0;
     width: 100vw;
     height: 100vh;
     background-color: #e42513;
-    background-image: url('../images/overlay-mask-menu.png');
-    background-repeat: no-repeat;
-    background-position: right center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
     opacity: 0;
     visibility: hidden;
     backface-visibility: hidden;
     transition: ease opacity 0.2s;
+    z-index: 9;
 
-    &.show{
+    &:after{
+      content: '';
+      position: absolute;
+      top: -5.35vh;
+      right: 0;
+      width: 50vw;
+      height: 105vh;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: right center;
+      background-image: url('../images/omm-pink.png');
+    }
+
+    &.show {
       opacity: 1;
       visibility: visible;
     }
@@ -85,14 +108,26 @@ header {
       position: relative;
       z-index: 2;
       margin-left: 0;
-      width: 100%;
-      padding: 0 10%;
+      width: 30vw;
+      height: 100vh;
+      margin-left: 20vw;
+      margin-top: 10vh;     
+
+      &:hover > * {
+        opacity: 0.4;
+      }
+
+      > *:hover {
+        opacity: 1;
+      }
 
       li {
         display: flex;
         flex-direction: row;
+        width: 100%;
         align-items: center;
-        margin-bottom: 5vh;
+        padding: 2.5vh 0;
+        transition: opacity 150ms linear 100ms, transform 150ms ease-in-out 100ms;
 
         span.no {
           background-color: #fff;
@@ -104,10 +139,11 @@ header {
           border-radius: 100%;
           font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
           color: #e42513;
+          transition: ease all 0.3s;
         }
 
         h3,
-        > a {
+        >a {
           font-size: 40px;
           line-height: 46px;
           font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
@@ -116,15 +152,35 @@ header {
 
         .submenu-links {
           position: absolute;
-          top: 0%;
-          right: 0%;
-          width: 50%;
+          top: -15.35vh;
+          right: -50vw;
+          width: 50vw;
+          height: 105vh;
+          padding-left: 7vw;
+          padding-top: 17.5vh;
           opacity: 0;
-          visibility: hidden;
+          display: none;
           transition: ease all 0.3s;
-          li{
-            margin-bottom: 30px;
-            &:before{
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: right center;
+          transition: ease all 0.3s;
+
+          ul:hover{
+            li {
+              opacity: 0.3;
+              &:hover{
+                opacity: 1;
+              }
+            }
+          }
+
+          li {
+            padding: 0;
+            transition: ease all 0.3s;
+            align-items: flex-start;
+
+            &:before {
               content: '';
               background: #fff;
               border-radius: 100%;
@@ -132,21 +188,43 @@ header {
               width: 40px;
               height: 40px;
             }
-            a{
+
+            a {
               text-decoration: none;
               font-size: 32px;
-              line-height: 38px;
+              line-height: 40px;
               font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
               color: #fff;
+              padding-bottom: 30px;
             }
           }
         }
 
         &:hover {
+
+          &:nth-child(1){
+            @include pinkBg;
+          }
+          &:nth-child(2),
+          &:nth-child(5) {
+            @include blueBg;
+          }
+
+          &:nth-child(3),
+          &:nth-child(6) {  
+            @include orangeBg;
+          }
+
+          &:nth-child(4){
+            @include greenBg;
+          }
+
+
           cursor: pointer;
+
           .submenu-links {
             opacity: 1;
-            visibility: visible;
+            display: block;
           }
         }
       }

@@ -51,42 +51,42 @@ svg {
     box-sizing: border-box;
     z-index: 2;
 
-    &::before {
-      content: "";
-      width: 100%;
-      height: 50%;
-      position: absolute;
-      z-index: 19;
-      left: 0;
-      top: 0;
-      background-image: url("../images/top-gradient-bg.png");
-      background-repeat: no-repeat;
-      background-position: top center;
-      background-size: cover;
-    }
+    // &::before {
+    //   content: "";
+    //   width: 100%;
+    //   height: 50%;
+    //   position: absolute;
+    //   z-index: 19;
+    //   left: 0;
+    //   top: 0;
+    //   background-image: url("../images/top-gradient-bg.png");
+    //   background-repeat: no-repeat;
+    //   background-position: top center;
+    //   background-size: cover;
+    // }
 
-    &::after {
-      content: "";
-      width: 100%;
-      height: 50%;
-      position: absolute;
-      z-index: 19;
-      left: 0;
-      bottom: 0;
-      background-image: url("../images/bottom-gradient-bg.png");
-      background-repeat: no-repeat;
-      background-position: bottom center;
-      background-size: cover;
-    }
+    // &::after {
+    //   content: "";
+    //   width: 100%;
+    //   height: 50%;
+    //   position: absolute;
+    //   z-index: 19;
+    //   left: 0;
+    //   bottom: 0;
+    //   background-image: url("../images/bottom-gradient-bg.png");
+    //   background-repeat: no-repeat;
+    //   background-position: bottom center;
+    //   background-size: cover;
+    // }
 
     .content {
       position: relative;
       z-index: 20;
       height: 100%;
-      padding-top: 10vh;
+      padding-top: 15vh;
 
       h2 {
-        font-size: 7vh;
+        font-size: 6.25vh;
         line-height: 7.5vh;
         font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
         margin-bottom: 80px;
@@ -113,7 +113,7 @@ svg {
       border-radius: 100%;
       padding: 20px;
       position: absolute;
-      top: 18%;
+      top: 21vh;
       right: -20vh;
       margin-top: 0;
       z-index: 20;
@@ -298,36 +298,42 @@ svg {
 
 .vertical-road {
   position: absolute;
-  height: 180px;
-  width: 64px;
+  height: 18vh;
+  width: 2.5vw;
   background-color: rgba(255, 255, 255, 0.3);
   background-image: url('../images/vertical-lines.png');
   background-repeat: repeat-y;
   background-position: bottom center;
   z-index: 1;
-  bottom: 64px;
+  bottom: 2.5vw;
 
 
   &.fl{
-    left: calc(75vw + 72px);
+    left: calc(80vw + 5px);
+    margin-left: -1.25vw;
   }
   &.fr{
-    left: calc(114vw + 72px);
+    left: calc(119vw + 9px);
+    margin-left: -1.25vw;
   }
 
   &.sl{
-    left: calc(175vw + 75px);
+    left: calc(180vw + 8px);
+    margin-left: -1.25vw;
   }
   &.sr{
-    left: calc(214vw + 75px);
-  }
+    left: calc(219vw + 9px);
+    margin-left: -1.25vw;
+  } 
   
   &.tl{
-    right: calc(40vw - 25px);
+    right: calc(40vw + 15px);
+    margin-right: -1.25vw;
   }
   
   &.tr{
     right: 0;
+    margin-right: 0;
   }
   
 }
@@ -356,7 +362,7 @@ div.svg-container {
   height: 100vh;
   overflow: hidden;
 
-  >div:not(.sun) {
+  > div:not(.sun) {
     width: 450vw;
     height: 100%;
     display: flex;
@@ -372,7 +378,7 @@ div.svg-container {
   #lines {
     width: calc(322vw - 23px);
     left: 50vw;
-    height: 64px;
+    height: 2.5vw;
     background-image: url('../images/road-lines.png');
     background-position: left center;
     background-repeat: repeat-x;
@@ -388,6 +394,7 @@ div.svg-container {
     left: 0;
     bottom: 0;
     z-index: 0;
+    height: 100vh;
   }
 
   #firstBg {
@@ -395,7 +402,6 @@ div.svg-container {
     left: 0;
     bottom: -10vh;
     z-index: 1;
-    // opacity: 0.25;
   }
 
   #secondBg {
@@ -403,7 +409,6 @@ div.svg-container {
     left: 0;
     bottom: -10vh;
     z-index: 2;
-    // opacity: 0.5;
   }
 
   #thirdBg {
@@ -411,7 +416,6 @@ div.svg-container {
     left: 0;
     bottom: -10vh;
     z-index: 3;
-    // opacity: 0.75;
   }
 
   #fourthBg {
@@ -419,7 +423,6 @@ div.svg-container {
     left: 0;
     bottom: -10vh;
     z-index: 4;
-    // opacity: 1;
   }
 
 
@@ -441,10 +444,10 @@ div.svg-container {
     top: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../images/sunbeams.png");
+    background-image: url("../images/sunbeams.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 140vw auto;
+    background-size: 100% auto;
     z-index: 2;
   }
 
@@ -504,6 +507,10 @@ div.svg-container {
   }
 }
 
+#section-three{
+  // z-index: 10;
+}
+
 @keyframes shrinkIn {
   from {
     left: -100%;
@@ -543,7 +550,7 @@ div.svg-container {
 
 .section-anchors {
   position: fixed;
-  bottom: 100px;
+  bottom: 4.5vh;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);

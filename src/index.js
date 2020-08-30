@@ -75,10 +75,11 @@ function scrollTrigger() {
             yoyo: true,
             paused: true,
             scrollTrigger: {
-                trigger: '#section-three',
-                start: "center bottom",
+                trigger: '#section-two',
+                start: "bottom center",
+                markers: true,
                 scrub: 1,
-                end: () => "+=" + document.querySelector(".container").offsetWidth
+                end: () => "+=" + document.querySelector(".container").offsetWidth - 50
             }
         })
         .from('#bodyBg svg .bodyBg', {

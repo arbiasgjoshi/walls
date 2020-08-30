@@ -1,5 +1,6 @@
 $root-font-size: 1rem;
-$font-family: 'Roboto', sans-serif;
+$font-family: 'Roboto',
+sans-serif;
 $page-width: 100%;
 $paragraph-font-size: 1.6rem;
 
@@ -8,7 +9,53 @@ $paragraph-font-size: 1.6rem;
 @font-face {
   font-family: 'stickarounduploaded_file';
   src: url('../fonts/stick-a-round-webfont.woff2') format('woff2'),
-  url('../fonts/stick-a-round-webfont.woff') format('woff');
+    url('../fonts/stick-a-round-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
+@mixin pinkBg {
+  span.no {
+    background-color: #ff527f;
+    color: #fff;
+  }
+
+  .submenu-links{
+    background-image: url('../images/omm-pink.png');
+  }
+}
+
+@mixin greenBg {
+  .submenu-links {
+    background-image: url('../images/omm-green.png');
+  }
+
+  span.no {
+    background-color: #46a916;
+    color: #fff;
+  }
+}
+
+@mixin blueBg {
+  .submenu-links {
+    background-image: url('../images/omm-blue.png');
+  }
+
+  span.no {
+    background-color: #00a0d6;
+    color: #fff;
+  }
+}
+
+@mixin orangeBg {
+  .submenu-links {
+    background-image: url('../images/omm-orange.png');
+  }
+
+  span.no {
+    background-color: #F95E20;
+    color: #fff;
+  }
+}
+
+
