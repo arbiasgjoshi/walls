@@ -39,12 +39,26 @@ header {
     height: 5.35vh;
 
     #toggleMenu {
-      background-color: #fff;
+      background-image: url('../images/menu-icon.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      cursor: pointer;
       border-radius: 100%;
+      height: 3.25vh;
+      width: 3.25vh;
+      border: 0;
+      transition: ease all 0.3s;
 
       &:focus {
         border: 0;
         outline: 0;
+      }
+
+      &.is-active{
+        background-image: url('../images/close-icon.png');
+        width: 4.5vh;
+        height: 4.5vh;
+        margin-top: 0.5vh;
       }
     }
 
@@ -241,6 +255,30 @@ header {
       background-repeat: no-repeat;
       background-size: cover;
       z-index: 1;
+    }
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .mobile{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #e42513;
+    h1{
+      font-size: 9vh;
+      line-height: 11.5vh;
+      font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
+      color: #fff;
     }
   }
 }

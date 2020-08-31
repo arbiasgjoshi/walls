@@ -36,7 +36,6 @@ svg {
   z-index: 3;
   position: relative;
   overflow-y: hidden;
-  background-color: rgba(2, 142, 189, 0.3);
 
   .panel {
     width: 16.666667%;
@@ -114,7 +113,6 @@ svg {
       padding: 20px;
       position: absolute;
       top: 21vh;
-      right: -20vh;
       margin-top: 0;
       z-index: 20;
 
@@ -122,28 +120,45 @@ svg {
         width: 100%;
         height: auto;
       }
+
+      &.one {
+        left: 0;
+        margin-left: -20vh;
+      }
+
+      &.two {
+        left: 100vw;
+        margin-left: -20vh;
+      }
+
+      &.three {
+        left: 200vw;
+        margin-left: -20vh;
+      }
     }
 
     .road {
       position: absolute;
-      bottom: 150px;
-      height: 64px;
+      bottom: 13vh;
+      height: 2.5vw;
       width: 100%;
       left: 0;
       z-index: 20;
 
       .heart {
-        width: 128px;
-        height: 128px;
+        width: 5vw;
+        height: 5vw;
         display: block;
         background: url('../images/heart-red.png') no-repeat center;
+        background-size: contain;
         position: absolute;
-        left: -64px;
-        margin-top: -35px;
+        left: -2.5vw;
+        top: 0;
+        transform: translateY(-1.25vw);
       }
 
       .lines {
-        height: 64px;
+        height: 2.5vw;
         width: 100%;
         background-image: url('../images/road-lines.png');
         background-position: left center;
@@ -280,18 +295,18 @@ svg {
     }
 
     &#third-sub {
-      
-        a.sub-page-link {
-          h2 {
-            color: #46a916;
-          }
 
-          span.number,
-          span.heart-ico {
-            background-color: #46a916;
-          }
+      a.sub-page-link {
+        h2 {
+          color: #46a916;
         }
-      
+
+        span.number,
+        span.heart-ico {
+          background-color: #46a916;
+        }
+      }
+
     }
   }
 }
@@ -308,34 +323,36 @@ svg {
   bottom: 2.5vw;
 
 
-  &.fl{
+  &.fl {
     left: calc(80vw + 5px);
     margin-left: -1.25vw;
   }
-  &.fr{
+
+  &.fr {
     left: calc(119vw + 9px);
     margin-left: -1.25vw;
   }
 
-  &.sl{
+  &.sl {
     left: calc(180vw + 8px);
     margin-left: -1.25vw;
   }
-  &.sr{
+
+  &.sr {
     left: calc(219vw + 9px);
     margin-left: -1.25vw;
-  } 
-  
-  &.tl{
+  }
+
+  &.tl {
     right: calc(40vw + 15px);
     margin-right: -1.25vw;
   }
-  
-  &.tr{
+
+  &.tr {
     right: 0;
     margin-right: 0;
   }
-  
+
 }
 
 .bike-rolling {
@@ -344,7 +361,7 @@ svg {
   display: inline-block;
   position: absolute;
   z-index: 20;
-  bottom: 143px;
+  bottom: 13vh;
   left: 68vw;
   background-image: url('../images/bike-rolling.png');
   background-repeat: no-repeat;
@@ -362,17 +379,37 @@ div.svg-container {
   height: 100vh;
   overflow: hidden;
 
-  > div:not(.sun) {
+  >div:not(.sun) {
     width: 450vw;
     height: 100%;
     display: flex;
     align-items: flex-end;
 
-    >img,
     >svg {
       width: 450vw;
       height: auto;
     }
+  }
+
+  >div.bodyBg {
+    align-items: flex-start;
+
+    svg {
+      height: 100vh;
+    }
+  }
+
+  &:before{
+    content: '';
+    width: 400vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    bottom: 0;
+    background: url('../images/bottom-white-mask.png');
+    background-size: 100vw auto;
+    background-repeat: repeat-x;
   }
 
   #lines {
@@ -386,8 +423,24 @@ div.svg-container {
     background-color: rgba(255, 255, 255, 0.3);
     position: absolute;
     z-index: 10;
-    bottom: 150px;
+    bottom: 13vh;
   }
+
+  div.sun {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    svg{
+      width: 85%;
+      margin-top: -10%;
+    }
+  }
+
+  // .bodyBg{
+  // }
 
   #bodyBg {
     position: absolute;
@@ -464,8 +517,10 @@ div.svg-container {
     opacity: 0;
 
     img {
-      max-height: 75vh;
+      max-height: 65vh;
       width: auto;
+      max-width: 35vw;
+      height: auto;
     }
   }
 
@@ -478,6 +533,7 @@ div.svg-container {
 
 #section-two {
   overflow: hidden;
+
   iframe {
     width: 100vw;
     height: 56.25vw;
@@ -507,7 +563,7 @@ div.svg-container {
   }
 }
 
-#section-three{
+#section-three {
   // z-index: 10;
 }
 

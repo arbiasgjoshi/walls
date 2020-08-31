@@ -150,17 +150,19 @@ function scrollTrigger() {
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-two',
-                start: "bottom center",
+                start: `bottom+=${section + 100} top`,
                 scrub: 1,
                 end: () => "+=" + container
             }
         })
         .from('.bike-rolling', {
-            marginLeft: "0vw",
+            x: "0vw",
+            opacity: 1,
             ease: "linear"
         })
         .to('.bike-rolling', {
-            marginLeft: "290vw",
+            x: "290vw",
+            opacity: 1,
             ease: "linear"
         });
 
@@ -443,8 +445,9 @@ function sunAnimation() {
             scrollTrigger: {
                 trigger: '#section-three',
                 start: `center+=${section + 100} center`,
+                once: true,
                 scrub: 1,
-                end: () => "+=" + (container * 0.45)
+                end: () => "+=" + (document.querySelector(".container").offsetWidth / 2)
             }
         })
         .from('.sun', {
@@ -458,10 +461,11 @@ function sunAnimation() {
 
     gsap.timeline({
             scrollTrigger: {
-                trigger: '#section-two',
-                start: `center+=${section} center`,
+                trigger: '#section-three',
+                start: `center+=${section + 100} center`,
+                once: true,
                 scrub: 1,
-                end: () => "+=" + (container * 0.45)
+                end: () => "+=" + (document.querySelector(".container").offsetWidth / 2)
             }
         })
         .from('.sun svg', {
@@ -472,16 +476,16 @@ function sunAnimation() {
         .to('.sun svg', {
             scale: '0.6',
             y: '10%',
-            marginTop: 0,
             ease: "linear"
         })
 
     gsap.timeline({
             scrollTrigger: {
-                trigger: '#section-two',
-                start: `center+=${section} center`,
+                trigger: '#section-three',
+                start: "center+=100vw center",
+                once: true,
                 scrub: 1,
-                end: () => "+=" + (container * 0.45)
+                end: () => "+=" + (document.querySelector(".container").offsetWidth / 2)
             }
         })
         .from('.sun svg .st1', {
