@@ -5,16 +5,12 @@
 body {
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
-  //-webkit-transition: ease all 0.15s;
-  //-moz-transition: ease all 0.15s;
-  //-ms-transition: ease all 0.15s;
-  //-o-transition: ease all 0.15s;
-  //transition: ease all 0.15s;
 }
 
 body,
 html {
   height: 100%;
+  width: 100%;
   padding: 0;
   margin: 0;
 }
@@ -112,7 +108,7 @@ svg {
       border-radius: 100%;
       padding: 20px;
       position: absolute;
-      top: 21vh;
+      bottom: 25vh;
       margin-top: 0;
       z-index: 20;
 
@@ -122,17 +118,17 @@ svg {
       }
 
       &.one {
-        left: 0;
+        left: 50vw;
         margin-left: -20vh;
       }
 
       &.two {
-        left: 100vw;
+        left: 150vw;
         margin-left: -20vh;
       }
 
       &.three {
-        left: 200vw;
+        left: 250vw;
         margin-left: -20vh;
       }
     }
@@ -200,25 +196,7 @@ svg {
     }
   }
 
-
-  div.subpage-wrapper {
-    position: absolute;
-    z-index: 20;
-    height: calc(100vh - 263px);
-    width: 300vw;
-    display: flex;
-    flex-direction: row;
-    left: 50vw;
-    bottom: 64px;
-    align-items: center;
-  }
-
   div.sub-pages {
-    display: flex;
-    width: 100vw;
-    padding: 0 20vw;
-    flex-direction: row;
-    justify-content: space-between;
 
     a.sub-page-link {
       width: 43vh;
@@ -230,7 +208,40 @@ svg {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      position: relative;
+      position: absolute;
+      bottom: 20vh;
+      left: 50%;
+      margin-left: -21.5vh;
+
+      &.first-sub {
+        h2 {
+          color: #ff527f;
+        }
+  
+        span.number {
+          background-color: #ff527f;
+        }
+      }
+  
+      &.second-sub {
+        h2 {
+          color: #00a0d6;
+        }
+  
+        span.number {
+          background-color: #00a0d6;
+        }
+      }
+  
+      &.third-sub {
+        h2 {
+          color: #46a916;
+        }
+  
+        span.number{
+          background-color: #46a916;
+        }
+      }
 
       span.number {
         font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
@@ -251,62 +262,32 @@ svg {
         margin-bottom: auto;
         margin-top: 16%;
       }
-
-      span.heart-ico {
-        width: 90px;
-        height: 90px;
-        background-image: url('../images/heart.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 75% auto;
-        margin-bottom: -40px;
-        border-radius: 100%;
-        box-shadow: -7px 14px 15px 0px rgba(0, 0, 0, 0.5);
-        position: absolute;
-        z-index: 2;
-        bottom: 0;
-      }
     }
 
-    &#first-sub {
-      a.sub-page-link {
-        h2 {
-          color: #ff527f;
-        }
-
-        span.number,
-        span.heart-ico {
+    span.heart-icon {
+      width: 5vw;
+      height: 5vw;
+      background-image: url('../images/heart.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 75% auto;
+      border-radius: 100%;
+      box-shadow: -7px 14px 15px 0px rgba(0, 0, 0, 0.5);
+      position: absolute;
+      z-index: 2;
+      bottom: 16vh;
+      margin-left: -2.5vw;
+      &.first-sub {
           background-color: #ff527f;
-        }
       }
-    }
-
-    &#second-sub {
-      a.sub-page-link {
-        h2 {
-          color: #00a0d6;
-        }
-
-        span.number,
-        span.heart-ico {
+  
+      &.second-sub {
           background-color: #00a0d6;
-        }
       }
-    }
-
-    &#third-sub {
-
-      a.sub-page-link {
-        h2 {
-          color: #46a916;
-        }
-
-        span.number,
-        span.heart-ico {
+  
+      &.third-sub {
           background-color: #46a916;
-        }
       }
-
     }
   }
 }
@@ -314,38 +295,38 @@ svg {
 .vertical-road {
   position: absolute;
   height: 18vh;
-  width: 2.5vw;
+  width: 3.4vw;
   background-color: rgba(255, 255, 255, 0.3);
   background-image: url('../images/vertical-lines.png');
   background-repeat: repeat-y;
   background-position: bottom center;
   z-index: 1;
-  bottom: 2.5vw;
+  bottom: 3.4vw;
 
 
   &.fl {
-    left: calc(80vw + 5px);
-    margin-left: -1.25vw;
+    left: 80.4vw;
+    margin-left: -1.7vw;
   }
 
   &.fr {
-    left: calc(119vw + 9px);
-    margin-left: -1.25vw;
+    left: 119.5vw;
+    margin-left: -1.7vw;
   }
 
   &.sl {
-    left: calc(180vw + 8px);
-    margin-left: -1.25vw;
+    left: 180.5vw;
+    margin-left: -1.7vw;
   }
 
   &.sr {
-    left: calc(219vw + 9px);
-    margin-left: -1.25vw;
+    left: 219.5vw;
+    margin-left: -1.7vw;
   }
 
   &.tl {
-    right: calc(40vw + 15px);
-    margin-right: -1.25vw;
+    right: 40.7vw;
+    margin-right: -1.7vw;
   }
 
   &.tr {
@@ -356,8 +337,8 @@ svg {
 }
 
 .bike-rolling {
-  width: 219px;
-  height: 236px;
+  width: 23vh;
+  height: 25vh;
   display: inline-block;
   position: absolute;
   z-index: 20;
@@ -399,7 +380,7 @@ div.svg-container {
     }
   }
 
-  &:before{
+  &:before {
     content: '';
     width: 400vw;
     height: 100vh;
@@ -413,9 +394,9 @@ div.svg-container {
   }
 
   #lines {
-    width: calc(322vw - 23px);
+    width: calc(322vw - 13px);
     left: 50vw;
-    height: 2.5vw;
+    height: 3.4vw;
     background-image: url('../images/road-lines.png');
     background-position: left center;
     background-repeat: repeat-x;
@@ -433,7 +414,8 @@ div.svg-container {
     height: 100vh;
     width: 100vw;
     z-index: 2;
-    svg{
+
+    svg {
       width: 85%;
       margin-top: -10%;
     }

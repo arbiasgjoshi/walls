@@ -43,10 +43,11 @@ function horizontalScroll() {
 
     document.querySelectorAll(".section-anchors button").forEach((btn) => {
         btn.addEventListener("click", () => {
-            gsap.to('.container', 1.5, {
+            gsap.to('.container', {
+                duration: 1,
                 scrollTo: {
-                    y: "#section-" + btn.id,
-                    x: 0
+                    x: "500",
+                    y: 0
                 }
             });
         });
@@ -61,23 +62,54 @@ function horizontalScroll() {
 }
 
 
-
 const
-    panelWidth = document.querySelector(".panels .panel").offsetWidth,
     container = document.querySelector('.container').offsetWidth,
     section = container / 6,
     leftOver = container - (section * 2);
 
 function scrollTrigger() {
 
-    setTimeout(function () {
-        gsap.to('#section-one .second-mask', {
-            opacity: 1,
-            duration: 0.5,
+    gsap.from('#section-one .first-mask', {
+        scale: 2,
+        opacity: 0,
+        duration: 0.5,
+        ease: "linear"
+    })
+    gsap.to('#section-one .first-mask', {
+        scale: 1,
+        opacity: 1,
+        duration: 1,
+        ease: "linear"
+    });
+
+    gsap.timeline({
+            scrollTrigger: {
+                trigger: '#section-two',
+                start: `bottom bottom`,
+                // markers: true,
+                scrub: 1,
+                end: () => "+=" + (container - section)
+            }
+        })
+        .from('.bike-rolling', {
+            x: "0",
+            ease: "linear"
+        })
+        .to('.bike-rolling', {
+            x: "100vw",
+            ease: "linear"
+        })
+        .to('.bike-rolling', {
+            x: "200vw",
+            ease: "linear"
+        })
+        .to('.bike-rolling', {
+            x: "285vw",
             ease: "linear"
         });
-    }, 2500)
+}
 
+function parallaxBgs() {
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-two',
@@ -146,29 +178,17 @@ function scrollTrigger() {
             x: "-35vw",
             ease: "linear"
         });
+}
+
+function circlePhoto() {
 
     gsap.timeline({
             scrollTrigger: {
-                trigger: '#section-two',
-                start: "bottom center",
-                scrub: 1,
-                end: () => "+=" + container
-            }
-        })
-        .from('.bike-rolling', {
-            marginLeft: "0vw",
-            ease: "linear"
-        })
-        .to('.bike-rolling', {
-            marginLeft: "290vw",
-            ease: "linear"
-        });
-
-    gsap.timeline({
-            scrollTrigger: {
+                trigger: '.container',
+                start: "bottom+=60 top",
                 once: true,
-                start: "bottom+=100vh top",
-                end: () => "+=" + document.querySelector(".container").offsetWidth
+                scrub: false,
+                end: () => "+=" + leftOver
             }
         })
         .from('.circle-photo.one', {
@@ -186,30 +206,11 @@ function scrollTrigger() {
 
     gsap.timeline({
             scrollTrigger: {
-                trigger: '#section-three',
-                start: "bottom+=100vh top",
+                trigger: '#section-four',
+                start: `bottom+=${section * 2.5} center-=120`,
                 once: true,
                 scrub: false,
-                end: () => "+=" + document.querySelector(".container").offsetWidth
-            }
-        })
-        .from('#first-sub a', {
-            scale: 0,
-            y: 100,
-            ease: "linear"
-        })
-        .to('#first-sub a', {
-            scale: 1,
-            y: 0,
-            ease: "linear"
-        });
-
-    gsap.timeline({
-            scrollTrigger: {
-                trigger: '#section-four',
-                start: "bottom+=250vh top",
-                once: true,
-                end: () => "+=" + document.querySelector(".container").offsetWidth
+                end: () => "+=" + leftOver
             }
         })
         .from('.circle-photo.two', {
@@ -225,35 +226,12 @@ function scrollTrigger() {
             ease: "linear"
         });
 
-
-    gsap.timeline({
-            scrollTrigger: {
-                trigger: '#section-four',
-                start: "bottom+=250vh top",
-                once: true,
-                scrub: false,
-                end: () => "+=" + document.querySelector(".container").offsetWidth
-            }
-        })
-        .from('#second-sub a', {
-            scale: 0,
-            y: 100,
-            ease: "linear"
-        })
-        .to('#second-sub a', {
-            scale: 1,
-            y: 0,
-            ease: "linear"
-        });
-
-
-
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-five',
-                start: "bottom+=280vh top",
+                start: `bottom+=${section * 3.5} center-=150`,
                 once: true,
-                end: () => "+=" + document.querySelector(".container").offsetWidth
+                end: () => "+=" + leftOver
             }
         })
         .from('.circle-photo.three', {
@@ -268,35 +246,77 @@ function scrollTrigger() {
             duration: 0.5,
             ease: "linear"
         });
+}
 
+function subPageLinks() {
     gsap.timeline({
             scrollTrigger: {
-                trigger: '#section-five',
-                start: "bottom+=300vh top",
+                trigger: '.container',
+                start: "bottom+=75 top",
                 once: true,
-                end: () => "+=" + document.querySelector(".container").offsetWidth
+                scrub: false,
+                end: () => "+=" + leftOver
             }
         })
-        .from('#third-sub a', {
+        .from('a.first-sub', {
             scale: 0,
             y: 100,
             ease: "linear"
         })
-        .to('#third-sub a', {
+        .to('a.first-sub', {
             scale: 1,
             y: 0,
             ease: "linear"
         });
 
+    gsap.timeline({
+            scrollTrigger: {
+                trigger: '#section-four',
+                start: `bottom+=${section * 2.5} center-=150`,
+                once: true,
+                scrub: false,
+                end: () => "+=" + leftOver
+            }
+        })
+        .from('a.second-sub', {
+            scale: 0,
+            y: 100,
+            ease: "linear"
+        })
+        .to('a.second-sub', {
+            scale: 1,
+            y: 0,
+            ease: "linear"
+        });
+
+    gsap.timeline({
+            scrollTrigger: {
+                trigger: '#section-five',
+                start: `bottom+=${section * 3.5} center-=150`,
+                once: true,
+                end: () => "+=" + leftOver
+            }
+        })
+        .from('a.third-sub', {
+            scale: 0,
+            y: 100,
+            ease: "linear"
+        })
+        .to('a.third-sub', {
+            scale: 1,
+            y: 0,
+            ease: "linear"
+        });
 }
+
 
 function backgroundChange() {
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-two',
-                start: `bottom+=${section + 300} bottom`,
+                start: `center+=${section + 100} center`,
                 scrub: 1,
-                end: () => "+=" + leftOver
+                end: () => "+=" + (container - section*1.5)
             }
         })
         .from('.bodyBg svg .bodyBg', {
@@ -316,72 +336,65 @@ function backgroundChange() {
             ease: "linear"
         });
 
-
-
     // TODO Refactor BG Change of Sections
     // Background Color Transition of SVGS
 
     gsap.timeline({
-            yoyo: true,
-            paused: true,
             scrollTrigger: {
                 trigger: '#section-two',
-                start: `bottom+=${section + 300} bottom`,
+                start: `center+=${section + 100} center`,
                 scrub: 1,
-                end: () => "+=" + leftOver
+                end: () => "+=" + (container - section*1.5)
             }
         })
         .from('#firstBg svg .firstBg', {
-            fill: '#ff92ad',
-            duration: 2,
+            fill: '#e12513',
             ease: "linear"
         })
-        .from('#firstBg svg .firstBg', {
+        .to('#firstBg svg .firstBg', {
+            fill: '#ff92ad',
+            ease: "linear"
+        })
+        .to('#firstBg svg .firstBg', {
             fill: '#6bbad5',
-            duration: 2,
             ease: "linear"
         })
         .to('#firstBg svg .firstBg', {
             fill: '#a0cd8a',
-            duration: 2,
             ease: "linear"
         });
 
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-two',
-                start: `bottom+=${section + 300} bottom`,
+                start: `center+=${section + 100} center`,
                 scrub: 1,
-                end: () => "+=" + leftOver
+                end: () => "+=" + (container - section*1.5)
             }
         })
         .from('#secondBg svg .secondBg', {
             fill: '#e42513',
-            duration: 2,
             ease: "none"
         })
         .to('#secondBg svg .secondBg', {
             fill: '#e54a72',
-            duration: 2,
             ease: "none"
         })
         .to('#secondBg svg .secondBg', {
             fill: '#008fbf',
-            duration: 2,
             ease: "none"
         })
         .to('#secondBg svg .secondBg', {
             fill: '#46a915',
-            duration: 2,
             ease: "none"
         });
 
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-two',
-                start: `bottom+=${section + 300} bottom`,
+                start: `center+=${section + 100} center`,
                 scrub: 1,
-                end: () => "+=" + leftOver
+                end: () => "+=" + (container - section*1.5)
             }
         })
         .from('#thirdBg svg .midground', {
@@ -404,31 +417,30 @@ function backgroundChange() {
             duration: 2,
             ease: "none"
         });
-
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-two',
-                start: `bottom+=${section + 300} bottom`,
+                start: `center+=${section + 100} center`,
                 scrub: 1,
-                end: () => "+=" + leftOver
+                end: () => "+=" + (container - section*1.5)
             }
         })
-        .from('#fourthBg svg .foreground', {
+        .from('#fourthBg svg .st0', {
             fill: '#641007',
             duration: 2,
             ease: "none"
         })
-        .to('#fourthBg svg .foreground', {
+        .to('#fourthBg svg .st0', {
             fill: '#a33451',
             duration: 2,
             ease: "none"
         })
-        .to('#fourthBg svg .foreground', {
+        .to('#fourthBg svg .st0', {
             fill: '#005f80',
             duration: 2,
             ease: "none"
         })
-        .to('#fourthBg svg .foreground', {
+        .to('#fourthBg svg .st0', {
             fill: '#2a650d',
             duration: 2,
             ease: "none"
@@ -437,29 +449,41 @@ function backgroundChange() {
 }
 
 function sunAnimation() {
-
-
     gsap.timeline({
             scrollTrigger: {
-                trigger: '#section-three',
+                trigger: '#section-two',
                 start: `center+=${section + 100} center`,
                 scrub: 1,
-                end: () => "+=" + (container * 0.45)
+                end: () => "+=" + (container - section*1.5)
             }
         })
         .from('.sun', {
             x: '0',
+            duration: 2,
             ease: "linear"
         })
         .to('.sun', {
             x: "100vw",
+            duration: 2,
+            ease: "linear"
+        })
+        
+        .to('.sun', {
+            x: "200vw",
+            duration: 2,
+            ease: "linear"
+        })
+        
+        .to('.sun', {
+            x: "300vw",
+            duration: 2,
             ease: "linear"
         })
 
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-two',
-                start: `center+=${section} center`,
+                start: `center+=${section + 100} center`,
                 scrub: 1,
                 end: () => "+=" + (container * 0.45)
             }
@@ -470,32 +494,51 @@ function sunAnimation() {
             ease: "linear"
         })
         .to('.sun svg', {
-            scale: '0.6',
+            scale: '0.65',
             y: '10%',
             marginTop: 0,
             ease: "linear"
         })
+        
 
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-two',
-                start: `center+=${section} center`,
+                start: `center+=${section + 100} center`,
                 scrub: 1,
-                end: () => "+=" + (container * 0.45)
+                end: () => "+=" + (container - section*1.5)
             }
         })
         .from('.sun svg .st1', {
-            fill: '#e42513',
+            fill: '#e12513',
             ease: "linear"
         })
         .to('.sun svg .st1', {
             fill: '#ff92ad',
             ease: "linear"
         })
+        .to('.sun svg .st1', {
+            fill: '#ffffff',
+            opacity: 0.1,
+            ease: "linear"
+        })
+        .to('.sun svg .st1', {
+            fill: '#ffffff',
+            opacity: 0.1,
+            ease: "linear"
+        });
 }
 
+parallaxBgs();
+
+circlePhoto();
+
+subPageLinks();
+
 horizontalScroll();
+
 backgroundChange();
+
 sunAnimation();
 
 setTimeout(function () {

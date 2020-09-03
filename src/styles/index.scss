@@ -17,6 +17,7 @@ html {
   text-align: center;
 }
 
+
 p {
   font-size: $paragraph-font-size;
 }
@@ -29,14 +30,14 @@ header {
   top: 0;
   background-color: #e42513;
   z-index: 21;
-  height: 5.35vh;
+  height: 56px;
 
   nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 5.35vh;
+    height: 100%;
 
     #toggleMenu {
       background-image: url('../images/menu-icon.png');
@@ -44,8 +45,8 @@ header {
       background-repeat: no-repeat;
       cursor: pointer;
       border-radius: 100%;
-      height: 3.25vh;
-      width: 3.25vh;
+      height: 30px;
+      width: 30px;
       border: 0;
       transition: ease all 0.3s;
 
@@ -56,28 +57,30 @@ header {
 
       &.is-active{
         background-image: url('../images/close-icon.png');
-        width: 4.5vh;
-        height: 4.5vh;
-        margin-top: 0.5vh;
+        width: 36px;
+        height: 36px;
+        margin-top: 10px;
       }
     }
 
     a.logo {
-      margin-top: 3vh;
+      margin-top: 0;
       position: fixed;
       left: 50%;
       transform: translateX(-50%);
       z-index: 9999;
+      top: 0;
 
       img{
-        height: 8.3vh;
+        height: 85px;
         width: auto;
       }
     }
 
     .download-icon{
       img{
-        height: 3.25vh;
+        height: 30px;
+        width: 30px;
       }
     }
   }
