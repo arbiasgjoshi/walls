@@ -22,12 +22,18 @@ $paragraph-font-size: 1.6rem;
 
   .submenu-links{
     background-image: url('../images/omm-pink.png');
+    > ul{
+      opacity: 1;
+    }
   }
 }
 
 @mixin greenBg {
   .submenu-links {
     background-image: url('../images/omm-green.png');
+    > ul{
+      animation: 0.25s ease 0s normal forwards 1 fadein;
+    }
   }
 
   span.no {
@@ -39,6 +45,9 @@ $paragraph-font-size: 1.6rem;
 @mixin blueBg {
   .submenu-links {
     background-image: url('../images/omm-blue.png');
+    > ul{
+      animation: 0.25s ease 0s normal forwards 1 fadein;
+    }
   }
 
   span.no {
@@ -50,6 +59,9 @@ $paragraph-font-size: 1.6rem;
 @mixin orangeBg {
   .submenu-links {
     background-image: url('../images/omm-orange.png');
+    > ul{
+      animation: 0.25s ease 0s normal forwards 1 fadein;
+    }
   }
 
   span.no {
@@ -57,5 +69,18 @@ $paragraph-font-size: 1.6rem;
     color: #fff;
   }
 }
+
+@keyframes fadein{
+  0% { opacity:0; }
+  66% { opacity:0; }
+  100% { opacity:1; }
+}
+
+@-webkit-keyframes fadein{
+  0% { opacity:0; }
+  66% { opacity:0; }
+  100% { opacity:1; }
+}
+
 
 

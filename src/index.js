@@ -40,7 +40,6 @@ function horizontalScroll() {
     });
 
     // TODO Refactor this jump to sections
-
     document.querySelectorAll(".section-anchors button").forEach((btn) => {
         btn.addEventListener("click", () => {
             gsap.to('.container', {
@@ -84,46 +83,30 @@ function scrollTrigger() {
 
     gsap.timeline({
             scrollTrigger: {
-                trigger: '#section-two',
-                start: `bottom bottom`,
-                // markers: true,
+                trigger: '#section-three',
+                start: `bottom+=${section - 50} center`,
                 scrub: 1,
-                end: () => "+=" + (container - section)
+                end: () => "+=" + (container - section*2.25),
             }
         })
-        .from('.bike-rolling', {
-            x: "0",
-            ease: "linear"
-        })
-        .to('.bike-rolling', {
-            x: "100vw",
-            ease: "linear"
-        })
-        .to('.bike-rolling', {
-            x: "200vw",
-            ease: "linear"
-        })
-        .to('.bike-rolling', {
-            x: "285vw",
-            ease: "linear"
-        });
+        .fromTo('.bike-rolling', {x: "0",ease: "linear"}, {x: "286vw", ease: "linear"})
 }
 
 function parallaxBgs() {
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-two',
-                start: `bottom+=${section + 300} bottom`,
+                start: `center+=${section - 400} center`,
                 scrub: 1,
-                end: () => "+=" + leftOver
+                end: () => "+=" + container
             }
         })
         .from('#firstBg svg', {
-            x: "5vw",
+            x: "-1vw",
             ease: "linear"
         })
         .to('#firstBg svg', {
-            x: "-54vw",
+            x: "-40vw",
             ease: "linear"
         });
 
@@ -131,51 +114,51 @@ function parallaxBgs() {
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-two',
-                start: `bottom+=${section + 300} bottom`,
+                start: `center+=${section - 400} center`,
                 scrub: 1,
-                end: () => "+=" + leftOver
+                end: () => "+=" + container
             }
         })
         .from('#secondBg svg', {
-            x: "0vw",
+            x: "-1vw",
             ease: "linear"
         })
         .to('#secondBg svg', {
-            x: "-48vw",
+            x: "-42vw",
             ease: "linear"
         });
 
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-two',
-                start: `bottom+=${section + 300} bottom`,
+                start: `center+=${section - 400} center`,
                 scrub: 1,
-                end: () => "+=" + leftOver
+                end: () => "+=" + container
             }
         })
         .from('#thirdBg svg', {
-            x: "0vw",
+            x: "-1vw",
             ease: "linear"
         })
         .to('#thirdBg svg', {
-            x: "-38vw",
+            x: "-40vw",
             ease: "linear"
         });
 
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-two',
-                start: `bottom+=${section + 300} bottom`,
+                start: `center+=${section - 400} center`,
                 scrub: 1,
-                end: () => "+=" + leftOver
+                end: () => "+=" + container
             }
         })
         .from('#fourthBg svg', {
-            x: "0vw",
+            x: "-1vw",
             ease: "linear"
         })
         .to('#fourthBg svg', {
-            x: "-35vw",
+            x: "-42vw",
             ease: "linear"
         });
 }
@@ -184,8 +167,8 @@ function circlePhoto() {
 
     gsap.timeline({
             scrollTrigger: {
-                trigger: '.container',
-                start: "bottom+=60 top",
+                trigger: '#section-two',
+                start: "bottom+=50 top",
                 once: true,
                 scrub: false,
                 end: () => "+=" + leftOver
@@ -251,7 +234,7 @@ function circlePhoto() {
 function subPageLinks() {
     gsap.timeline({
             scrollTrigger: {
-                trigger: '.container',
+                trigger: '#section-two',
                 start: "bottom+=75 top",
                 once: true,
                 scrub: false,
@@ -292,7 +275,7 @@ function subPageLinks() {
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-five',
-                start: `bottom+=${section * 3.5} center-=150`,
+                start: `bottom+=${section * 3.85} center-=150`,
                 once: true,
                 end: () => "+=" + leftOver
             }
@@ -452,7 +435,7 @@ function sunAnimation() {
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-two',
-                start: `center+=${section + 100} center`,
+                start: `center+=${section + 82} center`,
                 scrub: 1,
                 end: () => "+=" + (container - section*1.5)
             }
@@ -463,19 +446,19 @@ function sunAnimation() {
             ease: "linear"
         })
         .to('.sun', {
-            x: "100vw",
+            x: "90vw",
             duration: 2,
             ease: "linear"
         })
         
         .to('.sun', {
-            x: "200vw",
+            x: "190vw",
             duration: 2,
             ease: "linear"
         })
         
         .to('.sun', {
-            x: "300vw",
+            x: "290vw",
             duration: 2,
             ease: "linear"
         })
@@ -526,21 +509,20 @@ function sunAnimation() {
             fill: '#ffffff',
             opacity: 0.1,
             ease: "linear"
+        })
+        .to('.sun svg .st1', {
+            fill: '#ffffff',
+            opacity: 0.1,
+            ease: "linear"
         });
 }
 
+
+scrollTrigger();
+horizontalScroll();
+backgroundChange();
 parallaxBgs();
 
 circlePhoto();
-
 subPageLinks();
-
-horizontalScroll();
-
-backgroundChange();
-
 sunAnimation();
-
-setTimeout(function () {
-    scrollTrigger();
-}, 1000);

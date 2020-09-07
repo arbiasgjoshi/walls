@@ -78,6 +78,8 @@ header {
     }
 
     .download-icon{
+      position: relative;
+      z-index: 99;
       img{
         height: 30px;
         width: 30px;
@@ -103,18 +105,18 @@ header {
     transition: ease opacity 0.2s;
     z-index: 9;
 
-    &:after{
-      content: '';
-      position: absolute;
-      top: -5.35vh;
-      right: 0;
-      width: 50vw;
-      height: 105vh;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: right center;
-      background-image: url('../images/omm-pink.png');
-    }
+    // &:after{
+    //   content: '';
+    //   position: absolute;
+    //   top: -56px;
+    //   right: 0;
+    //   width: 50vw;
+    //   height: calc(100vh + 56px);
+    //   background-repeat: no-repeat;
+    //   background-size: cover;
+    //   background-position: right center;
+    //   background-image: url('../images/omm-pink.png');
+    // }
 
     &.show {
       opacity: 1;
@@ -137,15 +139,19 @@ header {
       > *:hover {
         opacity: 1;
       }
+      > li > a{
+        display: flex;
+        flex-direction: row;
+        padding: 2.5vh 0;
+        text-decoration: none;
+        align-items: center;
+      }
 
       li {
         display: flex;
         flex-direction: row;
         width: 100%;
-        align-items: center;
-        padding: 2.5vh 0;
         transition: opacity 150ms linear 100ms, transform 150ms ease-in-out 100ms;
-
         span.no {
           background-color: #fff;
           font-size: 40px;
@@ -169,19 +175,17 @@ header {
 
         .submenu-links {
           position: absolute;
-          top: -15.35vh;
-          right: -50vw;
+          top: calc(-10vh - 56px);
+          right: -49.9vw;
           width: 50vw;
           height: 105vh;
           padding-left: 7vw;
           padding-top: 17.5vh;
-          opacity: 0;
           display: none;
-          transition: ease all 0.3s;
           background-repeat: no-repeat;
           background-size: cover;
           background-position: right center;
-          transition: ease all 0.3s;
+          transition: ease background-image 0.3s;
 
           ul:hover{
             li {
@@ -213,6 +217,16 @@ header {
               font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
               color: #fff;
               padding-bottom: 30px;
+            }
+          }
+        }
+
+        &:first-child {
+          .submenu-links{
+            display: block;
+            background-image: url('../images/omm-pink.png');
+            ul{
+              opacity: 0;
             }
           }
         }
