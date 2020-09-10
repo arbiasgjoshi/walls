@@ -20,20 +20,18 @@ $paragraph-font-size: 1.6rem;
     color: #fff;
   }
 
-  .submenu-links{
+  ul{
     background-image: url('../images/omm-pink.png');
-    > ul{
-      opacity: 1;
-    }
+    opacity: 1;
   }
 }
 
 @mixin greenBg {
-  .submenu-links {
+  ul {
     background-image: url('../images/omm-green.png');
-    > ul{
-      animation: 0.25s ease 0s normal forwards 1 fadein;
-    }
+    // > li {
+    //   animation: 0.25s ease 0s normal forwards 1 fadein; 
+    // }
   }
 
   span.no {
@@ -43,11 +41,11 @@ $paragraph-font-size: 1.6rem;
 }
 
 @mixin blueBg {
-  .submenu-links {
+  ul{
     background-image: url('../images/omm-blue.png');
-    > ul{
-      animation: 0.25s ease 0s normal forwards 1 fadein;
-    }
+    // > li {
+    //   animation: 0.25s ease 0s normal forwards 1 fadein;
+    // }
   }
 
   span.no {
@@ -57,11 +55,11 @@ $paragraph-font-size: 1.6rem;
 }
 
 @mixin orangeBg {
-  .submenu-links {
+  ul{
     background-image: url('../images/omm-orange.png');
-    > ul{
-      animation: 0.25s ease 0s normal forwards 1 fadein;
-    }
+    // > li {
+    //   animation: 0.25s ease 0s normal forwards 1 fadein;
+    // }
   }
 
   span.no {

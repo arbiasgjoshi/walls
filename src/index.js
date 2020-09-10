@@ -12,7 +12,7 @@ import {
     ScrollToPlugin
 } from "gsap/ScrollToPlugin";
 
-import GIF from './images/logo-animation.gif';
+import GIF from './images/section-one-logo.svg';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TimelineMax);
 
@@ -31,18 +31,18 @@ function horizontalScroll() {
         ease: "none",
         horizontal: true,
         scrollTrigger: {
-            trigger: ".container",
+            trigger: ".container-wrapper",
             pin: true,
             scrub: 1,
             snap: 0,
-            end: () => "+=" + document.querySelector(".container").offsetWidth
+            end: () => "+=" + document.querySelector(".container-wrapper").offsetWidth
         }
     });
 
     // TODO Refactor this jump to sections
     document.querySelectorAll(".section-anchors button").forEach((btn) => {
         btn.addEventListener("click", () => {
-            gsap.to('.container', {
+            gsap.to('.container-wrapper', {
                 duration: 1,
                 scrollTo: {
                     x: "500",
@@ -55,14 +55,16 @@ function horizontalScroll() {
     setTimeout(function () {
         const myIcon = new Image();
         myIcon.src = GIF;
+        myIcon.width = 190;
+        myIcon.height = 150;
         document.getElementById('section-one').classList.add('loaded');
-        document.getElementById('gif-wrapper').appendChild(myIcon);
-    }, 2000);
+        document.getElementById('svg-logo').appendChild(myIcon);
+    }, 1000);
 }
 
 
 const
-    container = document.querySelector('.container').offsetWidth,
+    container = document.querySelector('.container-wrapper').offsetWidth,
     section = container / 6,
     leftOver = container - (section * 2);
 

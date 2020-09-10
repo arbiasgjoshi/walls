@@ -105,19 +105,6 @@ header {
     transition: ease opacity 0.2s;
     z-index: 9;
 
-    // &:after{
-    //   content: '';
-    //   position: absolute;
-    //   top: -56px;
-    //   right: 0;
-    //   width: 50vw;
-    //   height: calc(100vh + 56px);
-    //   background-repeat: no-repeat;
-    //   background-size: cover;
-    //   background-position: right center;
-    //   background-image: url('../images/omm-pink.png');
-    // }
-
     &.show {
       opacity: 1;
       visibility: visible;
@@ -134,6 +121,10 @@ header {
 
       &:hover > * {
         opacity: 0.4;
+      }
+
+      &:hover + ::after{
+        opacity: 0;
       }
 
       > *:hover {
@@ -154,16 +145,69 @@ header {
         transition: opacity 150ms linear 100ms, transform 150ms ease-in-out 100ms;
         span.no {
           background-color: #fff;
-          font-size: 40px;
-          line-height: 54px;
           width: 54px;
           height: 54px;
           margin-right: 30px;
           border-radius: 100%;
-          font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
-          color: #e42513;
           transition: ease all 0.3s;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &:before{
+            font-size: 40px;
+            line-height: 54px;
+            font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
+            color: #e42513;
+          }
         }
+
+        &:nth-child(1){
+          span.no{
+            &:before{
+              content: '1'
+            }
+          }
+        }
+
+        &:nth-child(2){
+          span.no{
+            &:before{
+              content: '2'
+            }
+          }
+        }
+
+        &:nth-child(3){
+          span.no{
+            &:before{
+              content: '3'
+            }
+          }
+        }
+
+        &:nth-child(4){
+          span.no{
+            &:before{
+              content: '4'
+            }
+          }
+        }
+
+        &:nth-child(5){
+          span.no{
+            &:before{
+              content: '5'
+            }
+          }
+        }
+
+        &:nth-child(6){
+          span.no{
+            &:before{
+              content: '6'
+            }
+          }
+        }        
 
         h3,
         >a {
@@ -173,7 +217,7 @@ header {
           color: #fff;
         }
 
-        .submenu-links {
+        ul {
           position: absolute;
           top: calc(-10vh - 56px);
           right: -49.9vw;
@@ -187,19 +231,24 @@ header {
           background-position: right center;
           transition: ease background-image 0.3s;
 
-          ul:hover{
-            li {
+          &:hover{
+            li{
               opacity: 0.3;
-              &:hover{
-                opacity: 1;
-              }
             }
           }
 
-          li {
+          > li {
             padding: 0;
             transition: ease all 0.3s;
             align-items: flex-start;
+
+            &:hover{
+              opacity: 1;
+            }
+
+            a > span.no{
+              display: none;
+            }
 
             &:before {
               content: '';
@@ -217,20 +266,13 @@ header {
               font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
               color: #fff;
               padding-bottom: 30px;
+              
+              transition: ease all 0.3s;
             }
           }
         }
-
-        &:first-child {
-          .submenu-links{
-            display: block;
-            background-image: url('../images/omm-pink.png');
-            ul{
-              opacity: 0;
-            }
-          }
-        }
-
+      }
+      > li{
         &:hover {
 
           &:nth-child(1){
@@ -253,7 +295,7 @@ header {
 
           cursor: pointer;
 
-          .submenu-links {
+          > ul {
             opacity: 1;
             display: block;
           }
@@ -273,6 +315,19 @@ header {
       background-size: cover;
       z-index: 1;
     }
+
+    &:after{
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: 0;
+      width: 50.1vw;
+      height: calc(100vh + 56px);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: right center;
+      background-image: url('../images/omm-pink.png');
+    }
   }
 }
 
@@ -281,21 +336,44 @@ header {
 }
 
 @media (max-width: 1024px) {
+  header{
+    display: none;
+  }
   .mobile{
     position: fixed;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-color: #e42513;
-    h1{
-      font-size: 9vh;
-      line-height: 11.5vh;
+    z-index: 9999;
+    
+    background-color: #c82111;
+
+    .header-copy{
+      height: 56px;
+      width: 100%;
+      background-color: #e42513;
+      img{
+        height: 85px;
+        width: auto;
+      }
+    }
+    
+    h4{
+      font-size: 3.5vh;
+      line-height: 4.5vh;
       font-family: 'Stick-A-RoundW00-Stick-A-Round', sans-serif;
       color: #fff;
+    }
+
+    img{
+      max-width: 95%;
+      height: auto;
+      margin-bottom: 0px;
     }
   }
 }
