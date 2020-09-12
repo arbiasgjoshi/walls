@@ -12,8 +12,6 @@ import {
     ScrollToPlugin
 } from "gsap/ScrollToPlugin";
 
-import GIF from './images/section-one-logo.svg';
-
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TimelineMax);
 
 document.getElementById('toggleMenu').onclick = function () {
@@ -40,25 +38,22 @@ function horizontalScroll() {
     });
 
     // TODO Refactor this jump to sections
-    document.querySelectorAll(".section-anchors button").forEach((btn) => {
-        btn.addEventListener("click", () => {
-            gsap.to('.container-wrapper', {
-                duration: 1,
-                scrollTo: {
-                    x: "500",
-                    y: 0
-                }
-            });
-        });
-    });
+    // document.querySelectorAll(".section-anchors span").forEach((btn) => {
+    //     btn.addEventListener("click", () => {
+    //         gsap.to(sections, {
+    //             duration: 1,
+    //             horizontal: true,
+    //             xPercent: -100,
+    //             // scrollTo: {
+    //             //     x: 5--,
+    //             //     y: 0
+    //             // }
+    //         });
+    //     });
+    // });
 
     setTimeout(function () {
-        const myIcon = new Image();
-        myIcon.src = GIF;
-        myIcon.width = 190;
-        myIcon.height = 150;
         document.getElementById('section-one').classList.add('loaded');
-        document.getElementById('svg-logo').appendChild(myIcon);
     }, 1000);
 }
 
@@ -88,10 +83,98 @@ function scrollTrigger() {
                 trigger: '#section-three',
                 start: `bottom+=${section - 50} center`,
                 scrub: 1,
-                end: () => "+=" + (container - section*2.25),
+                end: () => "+=" + (container - section * 2.25),
             }
         })
-        .fromTo('.bike-rolling', {x: "0",ease: "linear"}, {x: "286vw", ease: "linear"})
+        .fromTo('.bike-rolling', {
+            x: "0",
+            ease: "linear"
+        }, {
+            x: "286vw",
+            ease: "linear"
+        })
+}
+
+function anchorFixes() {
+    gsap.to('.second-anchor', {
+        yoyo: true,
+        scrollTrigger: {
+            trigger: '.container',
+            start: `center+=${section + 55} center`,
+            scrub: 1,
+            end: () => "+=" + section,
+            onEnter: () => {
+                document.querySelector('.second-anchor').classList.add('revealed')
+            },
+            onLeaveBack: () => {
+                document.querySelector('.second-anchor').classList.remove('revealed')
+            },
+        }
+    })
+
+    gsap.to('.third-anchor', {
+        yoyo: true,
+        scrollTrigger: {
+            trigger: '#section-three',
+            start: `bottom+=${section} center`,
+            scrub: 1,
+            end: () => "+=" + section,
+            onEnter: () => {
+                document.querySelector('.third-anchor').classList.add('revealed')
+            },
+            onLeaveBack: () => {
+                document.querySelector('.third-anchor').classList.remove('revealed')
+            },
+        }
+    })
+
+    gsap.to('.fourth-anchor', {
+        yoyo: true,
+        scrollTrigger: {
+            trigger: '#section-three',
+            start: `bottom+=${section * 2} center`,
+            scrub: 1,
+            end: () => "+=" + (section * 2),
+            onEnter: () => {
+                document.querySelector('.fourth-anchor').classList.add('revealed')
+            },
+            onLeaveBack: () => {
+                document.querySelector('.fourth-anchor').classList.remove('revealed')
+            },
+        }
+    })
+
+    gsap.to('.fifth-anchor', {
+        yoyo: true,
+        scrollTrigger: {
+            trigger: '#section-three',
+            start: `bottom+=${section * 3} center`,
+            scrub: 1,
+            end: () => "+=" + (section * 3),
+            onEnter: () => {
+                document.querySelector('.fifth-anchor').classList.add('revealed')
+            },
+            onLeaveBack: () => {
+                document.querySelector('.fifth-anchor').classList.remove('revealed')
+            },
+        }
+    })
+
+    gsap.to('.sixth-anchor', {
+        yoyo: true,
+        scrollTrigger: {
+            trigger: '#section-four',
+            start: `bottom+=${(section * 4) + 50} center`,
+            scrub: 1,
+            end: () => "+=" + ((section * 4) + 50),
+            onEnter: () => {
+                document.querySelector('.sixth-anchor').classList.add('revealed')
+            },
+            onLeaveBack: () => {
+                document.querySelector('.sixth-anchor').classList.remove('revealed')
+            },
+        }
+    })
 }
 
 function parallaxBgs() {
@@ -109,6 +192,24 @@ function parallaxBgs() {
         })
         .to('#firstBg svg', {
             x: "-40vw",
+            ease: "linear"
+        });
+
+
+    gsap.timeline({
+            scrollTrigger: {
+                trigger: '#section-two',
+                start: `center+=${section - 400} center`,
+                scrub: 1,
+                end: () => "+=" + container
+            }
+        })
+        .from('#secondBg svg', {
+            x: "-1vw",
+            ease: "linear"
+        })
+        .to('#secondBg svg', {
+            x: "-42vw",
             ease: "linear"
         });
 
@@ -163,6 +264,8 @@ function parallaxBgs() {
             x: "-42vw",
             ease: "linear"
         });
+
+
 }
 
 function circlePhoto() {
@@ -301,7 +404,7 @@ function backgroundChange() {
                 trigger: '#section-two',
                 start: `center+=${section + 100} center`,
                 scrub: 1,
-                end: () => "+=" + (container - section*1.5)
+                end: () => "+=" + (container - section * 1.5)
             }
         })
         .from('.bodyBg svg .bodyBg', {
@@ -329,7 +432,7 @@ function backgroundChange() {
                 trigger: '#section-two',
                 start: `center+=${section + 100} center`,
                 scrub: 1,
-                end: () => "+=" + (container - section*1.5)
+                end: () => "+=" + (container - section * 1.5)
             }
         })
         .from('#firstBg svg .firstBg', {
@@ -354,7 +457,7 @@ function backgroundChange() {
                 trigger: '#section-two',
                 start: `center+=${section + 100} center`,
                 scrub: 1,
-                end: () => "+=" + (container - section*1.5)
+                end: () => "+=" + (container - section * 1.5)
             }
         })
         .from('#secondBg svg .secondBg', {
@@ -379,7 +482,7 @@ function backgroundChange() {
                 trigger: '#section-two',
                 start: `center+=${section + 100} center`,
                 scrub: 1,
-                end: () => "+=" + (container - section*1.5)
+                end: () => "+=" + (container - section * 1.5)
             }
         })
         .from('#thirdBg svg .midground', {
@@ -407,7 +510,7 @@ function backgroundChange() {
                 trigger: '#section-two',
                 start: `center+=${section + 100} center`,
                 scrub: 1,
-                end: () => "+=" + (container - section*1.5)
+                end: () => "+=" + (container - section * 1.5)
             }
         })
         .from('#fourthBg svg .st0', {
@@ -439,7 +542,7 @@ function sunAnimation() {
                 trigger: '#section-two',
                 start: `center+=${section + 82} center`,
                 scrub: 1,
-                end: () => "+=" + (container - section*1.5)
+                end: () => "+=" + (container - section * 1.5)
             }
         })
         .from('.sun', {
@@ -452,13 +555,13 @@ function sunAnimation() {
             duration: 2,
             ease: "linear"
         })
-        
+
         .to('.sun', {
             x: "190vw",
             duration: 2,
             ease: "linear"
         })
-        
+
         .to('.sun', {
             x: "290vw",
             duration: 2,
@@ -484,14 +587,14 @@ function sunAnimation() {
             marginTop: 0,
             ease: "linear"
         })
-        
+
 
     gsap.timeline({
             scrollTrigger: {
                 trigger: '#section-two',
                 start: `center+=${section + 100} center`,
                 scrub: 1,
-                end: () => "+=" + (container - section*1.5)
+                end: () => "+=" + (container - section * 1.5)
             }
         })
         .from('.sun svg .st1', {
@@ -524,6 +627,7 @@ scrollTrigger();
 horizontalScroll();
 backgroundChange();
 parallaxBgs();
+anchorFixes();
 
 circlePhoto();
 subPageLinks();

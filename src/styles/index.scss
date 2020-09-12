@@ -28,7 +28,7 @@ header {
   padding: 0 1.5vw;
   left: 0;
   top: 0;
-  background-color: #e42513;
+  background-color: #ff210a;
   z-index: 21;
   height: 56px;
 
@@ -93,7 +93,7 @@ header {
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #e42513;
+    background-color: #ff210a;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -334,6 +334,7 @@ header {
 .mobile {
   display: none;
 }
+
 
 @media (max-width: 1024px) {
   header{

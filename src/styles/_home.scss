@@ -653,13 +653,17 @@ div.svg-container {
       height: 4px;
       background-color: transparent;
       border: 0;
+      border-radius: 4px;
+      &.revealed{
+        background-color: #fff;
+        opacity: 0.75;
+      }
     }
 
     &:first-of-type{
       span{
         background-color: #fff;
         opacity: 0.75;
-        border-radius: 4px;
       }
     }
 
