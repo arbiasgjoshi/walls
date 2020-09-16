@@ -5,14 +5,27 @@
 			var ua = window.navigator.userAgent;
 			var msie = ua.indexOf("MSIE ");
 			if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
-				jQuery('.ie').addClass('show')
-				document.body.style.overflowY = "hidden";
-				document.body.style.overflowX = "hidden";
+					jQuery('.ie').addClass('show')
+					jQuery('.pin-spacer').remove();
+					jQuery('.container-wrapper').remove();
+				document.body.style.overflow = "hidden";
+				document.getElementsByTagName('html')[0].style.overflow = "hidden";
 			}
 			return false;
 		}
 
 			jQuery(document).ready(function() {
+				
+				var windowWidth = window.innerWidth;
+
+				if(windowWidth < 1024) {
+					document.body.style.overflow = "hidden";
+				
+					jQuery('.pin-spacer').remove();
+					jQuery('.container-wrapper').remove();
+
+					document.getElementsByTagName('html')[0].style.overflow = "hidden";
+				}
 
 				msieversion();
 				jQuery("#mainMenu").append('<span class="pink"></span>')

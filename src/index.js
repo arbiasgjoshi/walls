@@ -381,47 +381,47 @@ function subPageLinks() {
 
     
     // console.log(w)
-    const w = window.innerWidth;
+    // const w = window.innerWidth;
 
-    if (w < 1440) {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: '#section-five',
-                start: `bottom+=${section * 3.25} center-=200`,
-                once: true,
-                end: () => "+=" + leftOver
-            }
-        })
-        .from('a.third-sub', {
-            scale: 0,
-            y: 100,
-            ease: "linear"
-        })
-        .to('a.third-sub', {
-            scale: 1,
-            y: 0,
-            ease: "linear"
-        });
-    } else {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: '#section-five',
-                start: `bottom+=${section * 3.85} center-=150`,
-                once: true,
-                end: () => "+=" + leftOver
-            }
-        })
-        .from('a.third-sub', {
-            scale: 0,
-            y: 100,
-            ease: "linear"
-        })
-        .to('a.third-sub', {
-            scale: 1,
-            y: 0,
-            ease: "linear"
-        });
-    }
+    // if (w < 1440) {
+    //     gsap.timeline({
+    //         scrollTrigger: {
+    //             trigger: '#section-five',
+    //             start: `bottom+=${section * 3.25} center-=200`,
+    //             once: true,
+    //             end: () => "+=" + leftOver
+    //         }
+    //     })
+    //     .from('a.third-sub', {
+    //         scale: 0,
+    //         y: 100,
+    //         ease: "linear"
+    //     })
+    //     .to('a.third-sub', {
+    //         scale: 1,
+    //         y: 0,
+    //         ease: "linear"
+    //     });
+    // } else {
+    //     gsap.timeline({
+    //         scrollTrigger: {
+    //             trigger: '#section-five',
+    //             start: `bottom+=${section * 3.85} center-=150`,
+    //             once: true,
+    //             end: () => "+=" + leftOver
+    //         }
+    //     })
+    //     .from('a.third-sub', {
+    //         scale: 0,
+    //         y: 100,
+    //         ease: "linear"
+    //     })
+    //     .to('a.third-sub', {
+    //         scale: 1,
+    //         y: 0,
+    //         ease: "linear"
+    //     });
+    // }
 
     
 }
@@ -659,5 +659,5 @@ parallaxBgs();
 anchorFixes();
 
 circlePhoto();
-subPageLinks();
+// subPageLinks();
 sunAnimation();
